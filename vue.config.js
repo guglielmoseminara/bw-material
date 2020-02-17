@@ -2,6 +2,7 @@ module.exports = {
     css: {
         loaderOptions: {
             sass: {
+                prependData: `@import "@/global.scss";`,
                 sassOptions: {
                     includePaths: [require('path').resolve(__dirname, 'node_modules')]
                 }    
