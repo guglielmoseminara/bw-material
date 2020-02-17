@@ -1,7 +1,10 @@
 @import "@material/slider/mdc-slider";
+@import "@material/ripple/mixins";
 
-$sl-color-primary: $bw-color-primary;
-$sl-color-secondary: $bw-color-secondary;
+// $sl-color-primary: var(--mdc-theme-primary);
+// $sl-color-secondary: var(--mdc-theme-secondary);
+$sl-color-primary: red;
+$sl-color-secondary: red;
 
 .color-primary {
     &.mdc-slider {

@@ -1,7 +1,7 @@
 @import "@material/icon-button/mdc-icon-button";
 
-$icon-selected-color: $bw-color-primary;
-$icon-selected-color-secondary: $bw-color-secondary;
+$icon-selected-color: var(--mdc-theme-primary);
+$icon-selected-color-secondary: var(--mdc-theme-secondary);
 $icon-unselected-color: rgba(0, 0, 0, 0.472);
 
 @mixin bw-icon-button($icon-unselected-color, $icon-selected-color) {

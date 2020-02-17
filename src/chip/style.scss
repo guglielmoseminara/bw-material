@@ -1,15 +1,21 @@
 
 @import "@material/chips/mdc-chips";
 
-$chip-selected-main-color: $bw-color-primary;
+
+// $chip-selected-main-color: var(--mdc-theme-primary);
+$chip-selected-main-color: red;
+
 $chip-selected-bg-color: rgba(211, 211, 211, 0);
 
-$chip-selected-main-color-secondary: $bw-color-secondary;
-$chip-selected-bg-color-secondary: rgba(211, 211, 211, 0);
-$chip-text-color: $bw-text-primary-on-light;
-$chip-text-color-secondary: $bw-text-secondary-on-light;
+// $chip-selected-main-color-secondary: var(--mdc-theme-secondary);
+$chip-selected-main-color-secondary: red;
 
- 
+$chip-selected-bg-color-secondary: rgba(211, 211, 211, 0);
+// $chip-text-color: var(--mdc-theme-on-primary);
+// $chip-text-color-secondary: var(--mdc-theme-on-secondary);
+$chip-text-color: red;
+$chip-text-color-secondary: red;
+
 .mdc-chip__ripple {
     top: 0!important;
     left: 0!important;

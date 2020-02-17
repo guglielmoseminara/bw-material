@@ -1,8 +1,12 @@
 @import "@material/switch/mdc-switch";
 
-$sw-color-primary: $bw-color-primary;
-$sw-color-secondary: $bw-color-secondary;
+// $sw-color-primary: var(--mdc-theme-primary);
+// $sw-color-secondary: var(--mdc-theme-secondary);
+$sw-color-primary: red;
+$sw-color-secondary: red;
+
 $sw-toggle-disabled-color: rgba(0, 0, 0, 0.6);
+
 .color-primary {
     &.mdc-switch {
        @include mdc-switch-toggled-on-color($sw-color-primary);

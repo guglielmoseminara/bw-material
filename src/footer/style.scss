@@ -1,4 +1,4 @@
-$footer-text-color: $link-color;
+$footer-text-color: blue;
 $footer-text-hover-color: linear-gradient(93.61deg, #EB643F -0.04%, #F8017A 49.25%, #994E9D 99.89%);
 
 $footer-divider-color: $footer-text-hover-color!default;
@@ -16,13 +16,13 @@ $footer-bg: rgb(245, 238, 239);
             margin: auto 0;
         }
 
-        @include media-breakpoint-down(xs) {
+        @media (max-width: 576px) {
             text-align: center;
             .bw-cta-link {
                 display: block;
             }
         }
-        @include media-breakpoint-up(sm) { 
+        @media (min-width: 767px) { 
             display: flex;
             justify-content: space-between;
         }
@@ -53,7 +53,7 @@ $footer-bg: rgb(245, 238, 239);
 
     .bw-footer-container--bottom, 
     .bw-footer-container--top {
-        @include media-breakpoint-up(sm) { 
+        @media (min-width: 767px) { 
             .bw-cta-link:not(:last-child) {
                 padding-right: 30px;
             }

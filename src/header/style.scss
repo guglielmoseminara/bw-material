@@ -4,8 +4,8 @@ $header-text-color: var(--mdc-theme-primary);
 $header-bg-color: var(--mdc-theme-on-primary);
 $header-height: 90px!default;
 
-$nav-link-color: $bw-text-link;
-$nav-link-hover-color: $bw-text-link-hover;
+$nav-link-color: var(--bw-text-link);
+$nav-link-hover-color: var(--bw-text-link-hover);
 
 .mdc-top-app-bar {
     .mdc-top-app-bar__row {

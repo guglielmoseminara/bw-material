@@ -49,7 +49,7 @@ $label-font-big: 20px;
 
 @mixin button($btn-color-main,  $btn-color, $btn-color-bg) {
     // riplle otpion
-    @include mdc-ripple-surface;
+    @include mdc-ripple-surface();
     @include mdc-ripple-radius-bounded;
     overflow: hidden;
     

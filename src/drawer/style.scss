@@ -9,9 +9,10 @@ $draw-bg-color: var(--mdc-theme--primary-bg);
 
 $draw-divider-color: gray;
 
-$draw-active-icon-color: $bw-color-primary;
-$draw-active-text-color: $bw-color-primary;
-
+// $draw-active-icon-color: var(--mdc-theme-primary);
+// $draw-active-text-color: var(--mdc-theme-primary);
+$draw-active-icon-color: red;
+$draw-active-text-color: red;
 
 .mdc-drawer-scrim {
     background-color: rgba(0, 0, 0, 0.32);

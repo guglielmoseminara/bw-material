@@ -4,14 +4,14 @@
 $label-color: rgb(110, 110, 110);
 $label-color-secondary: rgb(110, 110, 110);
 
-$label-color-focus: $bw-color-primary;
-$label-color-focus-secondary: $bw-color-secondary;
+$label-color-focus: var(--mdc-theme-primary);
+$label-color-focus-secondary: var(--mdc-theme-secondary);
 
 $focus-border-color: $label-color-focus;
 $focus-border-color-secondary: $label-color-focus-secondary;
 
-$input-text-color: $bw-text-primary-on-light;
-$input-text-color-secondary: $bw-text-secondary-on-light;
+$input-text-color: var(--mdc-theme-on-primary);
+$input-text-color-secondary: var(--mdc-theme-on-secondary);
 $input-height: 45px;
 
 
