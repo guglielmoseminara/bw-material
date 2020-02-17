@@ -8,6 +8,12 @@ $tooltip-text-color: rgb(255, 255, 255);
 $slider-main-color-secondary: var(--mdc-theme-secondary);
 $slider-line-color-secondary: rgba(238, 155, 155, 0.253);
 
+
+@mixin bw-bg-opacity($color, $opacity) {
+    background: $color;
+    background: rgba($color, $opacity);
+}
+
 @mixin bw-slider($slider-main-color, $slider-line-color) {
     div.vue-slider.vue-slider-ltr {
         height: 2px!important;

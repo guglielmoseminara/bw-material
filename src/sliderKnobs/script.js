@@ -1,5 +1,6 @@
 import { MDCRipple } from '@material/ripple';
 import utils from "../utils/utils";
+import VueSlider from 'vue-slider-component';
 
 export default {
   model: {
@@ -72,5 +73,8 @@ export default {
     changeModel(ev) {
       this.$emit('input', this.myvalue);
     }
+  },
+  components: {
+    VueSlider
   }
 }

@@ -1,6 +1,6 @@
 module.exports = {
     banner: true,
-    name: 'bw-material-button',
+    name: 'bw-material',
     plugins: {
         vue: {
             style: {
