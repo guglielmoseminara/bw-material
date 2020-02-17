@@ -1,0 +1,33 @@
+{
+  "private": false,
+  "name": "bw-material-button",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "vue serve src/index.vue",
+    "build": "npx bili --bundle-node-modules",
+    "build2": "vue build src/BwMaterialButton.vue"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@material/button": "^4.0.0",
+    "@material/fab": "^4.0.0",
+    "@material/ripple": "^4.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli": "^4.2.2",
+    "@vue/cli-service-global": "^4.2.2",
+    "bili": "^4.8.1",
+    "node-sass": "^4.13.1",
+    "rollup-plugin-vue": "^5.1.6",
+    "sass": "^1.25.0",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
+  }
+}

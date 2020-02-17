@@ -1,0 +1,137 @@
+$mdc-fab-height: 56px !default;
+$mdc-fab-mini-height: 40px !default;
+
+@import "@material/ripple/mixins";
+@import "@material/button/mdc-button";;
+@import "@material/fab/mdc-fab";
+
+// FIX MATERIAL MIXIN DO NOT TOUCH
+@mixin bw-mdc-button-height($height, $query: $query) {
+$feat-structure: mdc-feature-create-target($query, structure);
+
+@include mdc-feature-targets($feat-structure) {
+    min-height: $height;
+    height: auto!important;
+}
+}
+
+$btn-color: var(--mdc-theme-on-primary)!default;
+$btn-color-bg: var(--mdc-theme-primary)!default;
+$btn-color-main: var(--mdc-theme-primary)!default;
+
+$btn-radius-default: 4px;
+$btn-outline-border: 1px;
+$btn-horizontal-padding: 20px;
+$btn-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14);
+
+
+$btn-horizontal-padding-big: 24px;
+$btn-horizontal-padding-small: 12px;
+
+$btn-height: 36px;
+$btn-height-big: 50px;
+$btn-height-small: 30px;
+
+$btn-font-big: 20px;
+$btn-font-small: 12px;
+
+$fab-font: 16px;
+
+$label-font: 14px;
+$label-font-small: 12px;
+$label-font-big: 20px;
+
+
+@mixin btn-contain($btn-color-bg, $btn-color) {
+@include mdc-button-container-fill-color($btn-color-bg);
+@include mdc-button-ink-color($btn-color);
+}
+
+@mixin button($btn-color-main,  $btn-color, $btn-color-bg) {
+    // riplle otpion
+    @include mdc-ripple-surface;
+    @include mdc-ripple-radius-bounded;
+    overflow: hidden;
+    
+    @include mdc-fab-icon-size($fab-font, $fab-font);
+    
+    &.contain {
+    // @extend .mdc-button--raised;
+    @include btn-contain($btn-color-bg, $btn-color);
+    // ripple color DO NOT USE var(--x) material bug
+    @include mdc-states(rgb(255, 255, 255), false);      
+    }
+    
+    .mdc-button__icon:not(:last-child) {
+    margin-right: 14px;
+    margin-left: -4px;
+    }
+    
+    &.outline {
+    @extend .mdc-button--outlined;
+    @include mdc-button-outline-color($btn-color-main);
+    @include mdc-button-ink-color($btn-color-main);
+    @include mdc-button-outline-width($btn-outline-border, $btn-horizontal-padding);
+    
+    // ripple color DO NOT USE var(--x) material bug
+    @include mdc-states(rgb(255, 0, 0), false);
+    }
+    
+    &.text {
+    @include mdc-button-ink-color($btn-color-main);
+    }
+    
+    &.round-full {
+    @include mdc-button-shape-radius(100%);
+    }
+    &.round-none {
+    @include mdc-button-shape-radius(0);
+    }
+    &:not(.mdc-fab).round-default {
+    @include mdc-button-shape-radius($btn-radius-default);
+    }
+    &.shadow-default {
+    box-shadow: $btn-shadow;
+    }
+}
+
+.color-primary {
+&.mdc-button, .mdc-fab {
+    @include button($btn-color-main,  $btn-color, $btn-color-bg);
+}
+}
+
+.color-secondary {
+&.mdc-button, .mdc-fab {
+    $btn-color: var(--mdc-theme-on-secondary);
+    $btn-color-bg: var(--mdc-theme-secondary);
+    $btn-color-main: var(--mdc-theme-secondary);
+    @include button($btn-color-main,  $btn-color, $btn-color-bg);
+}
+}
+
+@mixin bw-button-size($btn-height, $btn-horizontal-padding, $label-font) {
+@include bw-mdc-button-height($btn-height, $query: mdc-feature-all());
+@include mdc-button-horizontal-padding($btn-horizontal-padding);
+.mdc-button__label {
+    font-size: $label-font;
+}
+}
+.size-default {
+&:not(.mdc-fab) {
+    @include bw-button-size($btn-height, $btn-horizontal-padding, $label-font);
+}
+}
+
+.size-big {
+@include bw-button-size($btn-height-big, $btn-horizontal-padding-big, $label-font-big);
+}
+
+.size-small {
+&:not(.mdc-fab) {
+    @include bw-button-size($btn-height-small, $btn-horizontal-padding-small, $label-font-small);
+}
+&.mdc-fab {
+    @extend .mdc-fab--mini;
+}
+}
