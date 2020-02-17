@@ -17,8 +17,25 @@
   "license": "ISC",
   "dependencies": {
     "@material/button": "^4.0.0",
+    "@material/card": "^4.0.0",
+    "@material/checkbox": "^4.0.0",
+    "@material/chips": "^4.0.0",
+    "@material/drawer": "^4.0.0",
+    "@material/elevation": "^4.0.0",
     "@material/fab": "^4.0.0",
-    "@material/ripple": "^4.0.0"
+    "@material/floating-label": "^4.0.0",
+    "@material/form-field": "^4.0.0",
+    "@material/icon-button": "^4.0.0",
+    "@material/line-ripple": "^4.0.0",
+    "@material/notched-outline": "^4.0.0",
+    "@material/radio": "^4.0.0",
+    "@material/ripple": "^4.0.0",
+    "@material/slider": "^4.0.0",
+    "@material/switch": "^4.0.0",
+    "@material/textfield": "^4.0.0",
+    "@material/top-app-bar": "^4.0.0",
+    "@material/typography": "^4.0.0",
+    "vue-slider-component": "^3.0.31"
   },
   "devDependencies": {
     "@vue/cli": "^4.2.2",

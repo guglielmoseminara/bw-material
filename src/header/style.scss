@@ -1,0 +1,32 @@
+@import "@material/top-app-bar/mdc-top-app-bar";
+
+$header-text-color: var(--mdc-theme-primary);
+$header-bg-color: var(--mdc-theme-on-primary);
+$header-height: 90px!default;
+
+$nav-link-color: $bw-text-link;
+$nav-link-hover-color: $bw-text-link-hover;
+
+.mdc-top-app-bar {
+    .mdc-top-app-bar__row {
+        height: $header-height;
+    }
+    @include mdc-top-app-bar-ink-color($header-text-color);
+    @include mdc-top-app-bar-fill-color($header-bg-color);
+
+    a { 
+        color: inherit;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.mdc-top-app-bar__title {
+    font-size: 14px;
+    color: $nav-link-color;
+    &:hover {
+        color: $nav-link-hover-color;
+    }
+}
+

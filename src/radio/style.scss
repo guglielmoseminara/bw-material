@@ -1,0 +1,39 @@
+@import "@material/form-field/mdc-form-field";
+@import "@material/radio/mdc-radio";
+
+$radio-border-color: var(--mdc-theme-primary)!default;
+$radio-border-color-unchek: $radio-border-color;
+$radio-border-color-chek: $radio-border-color;
+$radio-fill-color: $radio-border-color;
+
+$radio-border-color-secondary: var(--mdc-theme-secondary)!default;
+$radio-border-color-unchek-secondary: $radio-border-color-secondary;
+$radio-border-color-chek-secondary: $radio-border-color-secondary;
+$radio-fill-color-secondary: $radio-border-color-secondary;
+
+
+
+@mixin bw-radio-color($ripple-color, $radio-border-color-unchek, 
+$radio-border-color-chek, 
+$radio-fill-color) {
+    @include mdc-radio-checked-stroke-color($radio-border-color-unchek);
+    @include mdc-radio-unchecked-stroke-color($radio-border-color-chek);
+    @include mdc-radio-ink-color($radio-fill-color);
+    .mdc-radio__ripple::before, .mdc-radio__ripple::after {
+        background-color: $ripple-color!important;
+    }
+}
+
+.color-primary {
+    .mdc-radio {
+        $ripple-color: $radio-border-color;
+        @include bw-radio-color($ripple-color, $radio-border-color-unchek, $radio-border-color-chek, $radio-fill-color);
+    }
+}
+
+.color-secondary {
+    .mdc-radio {
+        $ripple-color: $radio-border-color-secondary;
+        @include bw-radio-color($ripple-color, $radio-border-color-unchek-secondary, $radio-border-color-chek-secondary, $radio-fill-color-secondary);  
+    }
+}

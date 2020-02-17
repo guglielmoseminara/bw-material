@@ -1,0 +1,28 @@
+@import "@material/slider/mdc-slider";
+
+$sl-color-primary: $bw-color-primary;
+$sl-color-secondary: $bw-color-secondary;
+
+.color-primary {
+    &.mdc-slider {
+        .mdc-slider__thumb-container {
+            height: auto;
+            @include mdc-ripple-surface;
+            @include mdc-ripple-radius-bounded();
+            @include mdc-states($sl-color-primary, false);     
+        }    
+        @include mdc-slider-color-accessible($sl-color-primary);
+    }
+}
+
+.color-secondary {
+    &.mdc-slider {
+        .mdc-slider__thumb-container {
+            height: auto;
+            @include mdc-ripple-surface;
+            @include mdc-ripple-radius-bounded;
+            @include mdc-states($sl-color-secondary, false);     
+        }
+        @include mdc-slider-color-accessible($sl-color-secondary);
+    }
+}

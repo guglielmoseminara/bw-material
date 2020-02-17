@@ -1,0 +1,83 @@
+@import "@material/textfield/mdc-text-field";
+@import "@material/notched-outline/mdc-notched-outline";
+
+$label-color: rgb(110, 110, 110);
+$label-color-secondary: rgb(110, 110, 110);
+
+$label-color-focus: $bw-color-primary;
+$label-color-focus-secondary: $bw-color-secondary;
+
+$focus-border-color: $label-color-focus;
+$focus-border-color-secondary: $label-color-focus-secondary;
+
+$input-text-color: $bw-text-primary-on-light;
+$input-text-color-secondary: $bw-text-secondary-on-light;
+$input-height: 45px;
+
+
+.mdc-text-field {
+    width: 100%;
+    &:not(.mdc-text-field--textarea) {
+        @include mdc-text-field-height($input-height);
+    }
+}
+
+@mixin bw-text-input($label-color, $input-text-color, $label-color-focus, $focus-border-color) {
+    &.mdc-text-field {
+        @include mdc-text-field-caret-color($label-color);
+        @include mdc-text-field-ink-color($input-text-color);
+        .mdc-floating-label {
+            color: $label-color;
+            &.mdc-floating-label--float-above {
+                color: $label-color-focus;
+            }
+        }
+        // only for filled
+        @include mdc-text-field-bottom-line-color($label-color);
+        @include mdc-text-field-hover-bottom-line-color($focus-border-color);
+
+        .mdc-line-ripple {
+            @include mdc-line-ripple-color($focus-border-color);
+        }
+
+        // only for outline
+        @include mdc-text-field-focused-outline-color($focus-border-color);
+        @include mdc-text-field-hover-outline-color($focus-border-color);
+    }
+}
+
+.color-primary {
+    @include bw-text-input($label-color, $input-text-color, $label-color-focus, $focus-border-color);
+}
+
+.color-secondary {
+    @include bw-text-input($label-color-secondary, $input-text-color-secondary, 
+    $label-color-focus-secondary, $focus-border-color-secondary);
+}
+
+.color-error {
+    @include bw-text-input($label-color, $input-text-color-secondary, 
+    red, red);
+}
+
+
+// gradient in outline
+// .mdc-text-field--focused {
+//     .mdc-notched-outline__trailing, .mdc-notched-outline__leading, .mdc-notched-outline__notch {
+//         border: 2px solid transparent;
+    
+//         -moz-border-image: -moz-linear-gradient(left, #3acfd5 0%, #3a4ed5 100%);
+//         -webkit-border-image: -webkit-linear-gradient(left, #3acfd5 0%, #3a4ed5 100%);
+//         border-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%);
+//         border-image-outset: 2px;
+//     }
+//     .mdc-notched-outline__trailing {
+//         border-image-slice: 1 1 1 0;
+//     }
+//     .mdc-notched-outline__leading {
+//         border-image-slice: 1 0 1 1;
+//     }
+//     .mdc-notched-outline__notch {
+//         border-image-slice: 0 0 1 0;
+//     }
+// }

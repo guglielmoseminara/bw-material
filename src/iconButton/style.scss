@@ -1,0 +1,22 @@
+@import "@material/icon-button/mdc-icon-button";
+
+$icon-selected-color: $bw-color-primary;
+$icon-selected-color-secondary: $bw-color-secondary;
+$icon-unselected-color: rgba(0, 0, 0, 0.472);
+
+@mixin bw-icon-button($icon-unselected-color, $icon-selected-color) {
+    .mdc-icon-button__icon {
+        @include mdc-icon-button-ink-color($icon-unselected-color);
+        &.mdc-icon-button__icon--on {
+            color: $icon-selected-color;
+        }
+    }
+}
+
+.color-primary {
+    @include bw-icon-button($icon-unselected-color, $icon-selected-color);
+}
+
+.color-secondary {
+    @include bw-icon-button($icon-unselected-color, $icon-selected-color-secondary);
+}

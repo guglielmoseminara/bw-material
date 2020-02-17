@@ -1,0 +1,19 @@
+@import "@material/switch/mdc-switch";
+
+$sw-color-primary: $bw-color-primary;
+$sw-color-secondary: $bw-color-secondary;
+$sw-toggle-disabled-color: rgba(0, 0, 0, 0.6);
+.color-primary {
+    &.mdc-switch {
+       @include mdc-switch-toggled-on-color($sw-color-primary);
+       @include mdc-switch-toggled-off-thumb-color($sw-toggle-disabled-color);
+    }
+}
+
+.color-secondary {
+    &.mdc-switch {
+        @include mdc-switch-toggled-on-color($sw-color-secondary);
+        @include mdc-switch-toggled-off-thumb-color($sw-toggle-disabled-color);
+
+    }
+}

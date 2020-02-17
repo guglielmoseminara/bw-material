@@ -1,0 +1,98 @@
+$footer-text-color: $link-color;
+$footer-text-hover-color: linear-gradient(93.61deg, #EB643F -0.04%, #F8017A 49.25%, #994E9D 99.89%);
+
+$footer-divider-color: $footer-text-hover-color!default;
+$footer-cta-padding: 10px 0;
+
+$footer-bg: rgb(245, 238, 239);
+
+.bw-footer {
+    background: $footer-bg;
+    padding: 0 25px;
+    .bw-footer-container {
+
+        .footer-link-container {
+            height: auto;
+            margin: auto 0;
+        }
+
+        @include media-breakpoint-down(xs) {
+            text-align: center;
+            .bw-cta-link {
+                display: block;
+            }
+        }
+        @include media-breakpoint-up(sm) { 
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .bw-footer-container--middle .footer-link-container {
+        margin: 0 15px;
+    }
+    
+    .bw-footer-container--bottom, 
+    .bw-footer-container--top, 
+    .bw-footer-container--middle {
+        @extend .bw-footer-container;
+    }
+
+    .bw-footer-container--bottom {
+        padding: 20px 0;
+    }
+
+    
+    .bw-footer-container--middle {
+        padding: 27px 0;
+    }
+
+    .bw-footer-container--top {
+        padding: 34px 0;
+    }
+
+    .bw-footer-container--bottom, 
+    .bw-footer-container--top {
+        @include media-breakpoint-up(sm) { 
+            .bw-cta-link:not(:last-child) {
+                padding-right: 30px;
+            }
+        }
+    }
+
+    .bw-footer-container--middle {
+        .bw-cta-link {
+            display: block;
+        }
+    }
+
+    .bw-cta-link {
+        padding: $footer-cta-padding;
+
+        color: $footer-text-color;
+        &:hover {
+            background: $footer-text-hover-color;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    .bw-caption {
+        color: $footer-text-color;
+    }
+
+    .mdc-list-divider {
+        height: 1px;
+        background: $footer-divider-color;
+    }
+
+    // default spacing
+    .mdc-list-divider {
+        margin-bottom: 20px 0;
+    }
+}
+
+// Theming
+.footer-middle-center {
+    margin: auto;
+}

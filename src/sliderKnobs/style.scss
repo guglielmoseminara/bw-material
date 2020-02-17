@@ -1,0 +1,65 @@
+// @import 'mixin.scss';
+
+$slider-main-color: $bw-color-primary;
+$slider-line-color: rgba(163, 155, 238, 0.253);
+$tooltip-text-color: rgb(255, 255, 255);
+
+
+$slider-main-color-secondary: $bw-color-secondary;
+$slider-line-color-secondary: rgba(238, 155, 155, 0.253);
+
+
+@mixin bw-slider($slider-main-color, $slider-line-color) {
+    div.vue-slider.vue-slider-ltr {
+        height: 2px!important;
+    }
+    
+    div.vue-slider-rail {
+        background-color: $slider-line-color;
+        .vue-slider-process {
+            background-color: $slider-main-color;
+        }
+    }
+    .vue-slider-dot-handle {
+        background-color: $slider-main-color!important;
+        box-shadow: none!important;
+    
+        &:hover::after, &:active::after {
+            content: '';
+            width:40px;
+            height: 40px;
+            display: block;
+            position: absolute;
+            top: -100%;
+            left: calc(50% - 20px);
+            border-radius: 50%;
+        }
+        &:hover::after {
+            @include bw-bg-opacity($slider-main-color, 0.2);
+        }
+        &:active::after {
+            background-color: $slider-line-color;
+        } 
+    }
+    
+    .vue-slider-dot-tooltip .vue-slider-dot-tooltip-inner {
+        background-color: $slider-main-color!important;
+        border-color:  $slider-main-color!important;
+        border-radius: 45%;
+        padding: 0 3px 5px 3px;
+        color: $tooltip-text-color;
+        &::after {
+            height: 10px;
+            border-width: 9px;
+            top: calc(100% - 4px);
+        }
+    }
+}
+
+.color-primary {
+    @include bw-slider($slider-main-color, $slider-line-color);
+}
+
+.color-secondary {
+    @include bw-slider($slider-main-color-secondary, $slider-line-color-secondary);
+}

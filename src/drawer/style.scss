@@ -1,0 +1,32 @@
+@import "@material/drawer/mdc-drawer";
+@import "@material/list/mdc-list";
+
+$draw-width: 300px;
+$draw-icon-color: gray;
+$draw-text-color: gray;
+
+$draw-bg-color: var(--mdc-theme--primary-bg);
+
+$draw-divider-color: gray;
+
+$draw-active-icon-color: $bw-color-primary;
+$draw-active-text-color: $bw-color-primary;
+
+
+.mdc-drawer-scrim {
+    background-color: rgba(0, 0, 0, 0.32);
+}
+
+.mdc-drawer {
+    // height: -moz-available;
+    height: -webkit-fill-available;
+    @include mdc-drawer-width($draw-width);
+    @include mdc-drawer-item-icon-ink-color($draw-icon-color);
+    @include mdc-drawer-surface-fill-color($draw-bg-color);
+    @include mdc-drawer-divider-color($draw-divider-color);
+    @include mdc-drawer-item-text-ink-color($draw-text-color);
+
+    @include mdc-drawer-item-activated-icon-ink-color($draw-active-icon-color);
+    @include mdc-drawer-item-activated-text-ink-color($draw-active-text-color);
+    // @include mdc-drawer-scrim-fill-color(red);
+}

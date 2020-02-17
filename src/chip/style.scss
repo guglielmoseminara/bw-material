@@ -1,0 +1,48 @@
+
+@import "@material/chips/mdc-chips";
+
+$chip-selected-main-color: $bw-color-primary;
+$chip-selected-bg-color: rgba(211, 211, 211, 0);
+
+$chip-selected-main-color-secondary: $bw-color-secondary;
+$chip-selected-bg-color-secondary: rgba(211, 211, 211, 0);
+$chip-text-color: $bw-text-primary-on-light;
+$chip-text-color-secondary: $bw-text-secondary-on-light;
+
+ 
+.mdc-chip__ripple {
+    top: 0!important;
+    left: 0!important;
+    border: none!important;
+}
+
+@mixin bw-chip($chip-selected-main-color, $chip-selected-bg-color, $chip-text-color){
+    &.mdc-chip {
+        @include mdc-chip-ink-color($chip-text-color);
+    }
+    &.mdc-chip.mdc-chip--selected {
+        @include mdc-chip-fill-color($chip-selected-bg-color);
+        @include mdc-chip-selected-ink-color($chip-selected-main-color);
+        &.outline {
+            @include mdc-chip-outline(1px, solid, $chip-selected-main-color);
+        }
+    }
+
+    // chiedere a marco
+    // &.mdc-chip.outline {
+    //     &:focus {
+    //         @include mdc-chip-outline(1px, solid, $chip-text-color);
+    //     }
+    // }
+
+}
+
+.color-primary {
+    @include bw-chip($chip-selected-main-color, $chip-selected-bg-color,
+     $chip-text-color);
+}
+
+.color-secondary {
+    @include bw-chip($chip-selected-main-color-secondary, 
+    $chip-selected-bg-color-secondary,  $chip-text-color-secondary);
+}
