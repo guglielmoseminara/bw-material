@@ -4,7 +4,7 @@
     class="mdc-chip-set"
   >
     <template v-if="choice">
-      <bw_chip v-for="(chip, index) in options" :color="color" :type="type"
+      <bw-material-chip v-for="(chip, index) in options" :color="color" :type="type"
         :key="index" 
         :value="chip[configOptions.codeField] == value"
         @clicked="onClick($event, index)"
@@ -13,11 +13,11 @@
           slot="leadingIcon">{{chip.icon}} 
         </i>
         {{ chip[configOptions.nameField] }}
-      </bw_chip>
+      </bw-material-chip>
     </template>
 
     <template v-if="filter">
-      <bw_chip v-for="(chip, index) in options" :color="color" :type="type"
+      <bw-material-chip v-for="(chip, index) in options" :color="color" :type="type"
         :is-filter="true"
         :key="index" 
         :value="isContained(chip)"
@@ -27,7 +27,7 @@
           slot="leadingIcon">{{chip.icon}} 
         </i>
         {{ chip[configOptions.nameField] }}
-      </bw_chip>
+      </bw-material-chip>
     </template>
   </div>
 </template>
