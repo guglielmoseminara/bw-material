@@ -39,7 +39,7 @@ export default {
         Vue.component("bw-material-slider", BwMaterialSlider);
         Vue.component("bw-material-text-field-helper-line", BwMaterialTextFieldHelperLine);
         Vue.component("bw-material-card-media", BwMaterialCardMedia);
-        Vue.component("bw-material-drawer   ", BwMaterialDrawer);
+        Vue.component("bw-material-drawer", BwMaterialDrawer);
         Vue.component("bw-material-slider-knobs", BwMaterialSliderKnobs);
         Vue.component("bw-material-text-field-helper-text", BwMaterialTextFieldHelperText);
         Vue.component("bw-material-card-primary-action", BwMaterialCardPrimaryAction);

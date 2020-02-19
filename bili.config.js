@@ -11,5 +11,10 @@ module.exports = {
                 }
             }
         }
+    },
+    alias: {
+      resolve: {
+        'vue$': 'vue/dist/vue.esm.js'
+      }
     }
 };

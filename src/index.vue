@@ -6,6 +6,13 @@
                 <bw-material-floating-label for="my-text-field1">Subscription</bw-material-floating-label>
                 <bw-material-line-ripple slot="bottomLine"/>
         </bw-material-text-field>
+
+        <bw-material-slider-knobs
+            :min="9"
+            :max="99"
+            v-model="singleSliderModelKnobsRange"
+        >
+        </bw-material-slider-knobs>
     </div>
 </template>
 
@@ -19,5 +26,11 @@
     Vue.use(BwMaterialTextField);
     Vue.use(BwMaterialFloatingLabel);
 
-    export default {}
+    export default {
+        data () {
+            return {
+                singleSliderModelKnobsRange: [25, 80]
+            }
+        },
+    }
 </script>

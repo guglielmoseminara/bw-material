@@ -1,11 +1,11 @@
 <template>
 <header class="mdc-top-app-bar" :class="classes">
-    <bw_drawer dismissible ref="drawer" :nav-links-groups="navLinksGroups">
+    <bw-material-drawer dismissible ref="drawer" :nav-links-groups="navLinksGroups">
         <div slot="header">
              <slot name="drawerHeaderSlot" />
         </div>
         <slot name="drawerSlot" />
-    </bw_drawer>
+    </bw-material-drawer>
 
     <div class="mdc-drawer-scrim" @click="closeDrawer"></div>
 
