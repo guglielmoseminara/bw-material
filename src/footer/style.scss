@@ -1,13 +1,15 @@
-$footer-text-color: blue;
-$footer-text-hover-color: linear-gradient(93.61deg, #EB643F -0.04%, #F8017A 49.25%, #994E9D 99.89%);
 
-$footer-divider-color: $footer-text-hover-color!default;
+:root {
+    --footer-text-color: var();
+    --footer-text-hover-color: var(--mdc-theme-primary);
+    --footer-divider-color: var(--mdc-theme-text-primary-on-light);
+    --footer-bg: var(--mdc-theme--primary-bg);
+}
+
 $footer-cta-padding: 10px 0;
 
-$footer-bg: rgb(245, 238, 239);
-
 .bw-footer {
-    background: $footer-bg;
+    background: var(--footer-bg);
     padding: 0 25px;
     .bw-footer-container {
 
@@ -69,21 +71,21 @@ $footer-bg: rgb(245, 238, 239);
     .bw-cta-link {
         padding: $footer-cta-padding;
 
-        color: $footer-text-color;
+        color: var(--footer-text-color);
         &:hover {
-            background: $footer-text-hover-color;
+            background: var(--footer-text-hover-color);
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
     }
 
     .bw-caption {
-        color: $footer-text-color;
+        color: var(--footer-text-color);
     }
 
     .mdc-list-divider {
         height: 1px;
-        background: $footer-divider-color;
+        background: var(--footer-divider-color);
     }
 
     // default spacing
