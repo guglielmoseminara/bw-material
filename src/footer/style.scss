@@ -1,7 +1,7 @@
 
 :root {
-    --footer-text-color: var();
-    --footer-text-hover-color: var(--mdc-theme-primary);
+    --footer-text-color: var(--bw-text-link);
+    --footer-text-hover-color: var(--bw-text-link-hover);
     --footer-divider-color: var(--mdc-theme-text-primary-on-light);
     --footer-bg: var(--mdc-theme--primary-bg);
 }
