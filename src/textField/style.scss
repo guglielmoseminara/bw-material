@@ -1,28 +1,32 @@
 @import "@material/textfield/mdc-text-field";
 @import "@material/notched-outline/mdc-notched-outline";
 
-$label-color: rgb(110, 110, 110);
-$label-color-secondary: rgb(110, 110, 110);
 
-$label-color-focus: var(--mdc-theme-primary);
-$label-color-focus-secondary: var(--mdc-theme-secondary);
-
-$focus-border-color: $label-color-focus;
-$focus-border-color-secondary: $label-color-focus-secondary;
-
-$input-text-color: var(--mdc-theme-on-primary);
-$input-text-color-secondary: var(--mdc-theme-on-secondary);
-$input-height: 45px;
+:root {
+    --label-color: rgba(0, 0, 0, 0.6);
+    --label-color-secondary: rgba(0, 0, 0, 0.6);
+    
+    --label-color-focus: var(--mdc-theme-primary);
+    --label-color-focus-secondary: var(--mdc-theme-secondary);
+    --focus-border-color: var(--label-color-focus);
+    --focus-border-color-secondary: var(--label-color-focus-secondary);
+    --input-text-color: var(--mdc-theme-text-primary-on-light);
+    --input-text-color-secondary: var( --mdc-theme-text-secondary-on-light);
+    --input-height: 45px;
+    --input-error: rgb(209, 8, 8);
+}
 
 
 .mdc-text-field {
     width: 100%;
     &:not(.mdc-text-field--textarea) {
-        @include mdc-text-field-height($input-height);
+        height: var(--input-height);
     }
 }
 
 @mixin bw-text-input($label-color, $input-text-color, $label-color-focus, $focus-border-color) {
+    // only for filled
+
     &.mdc-text-field {
         @include mdc-text-field-caret-color($label-color);
         @include mdc-text-field-ink-color($input-text-color);
@@ -47,17 +51,18 @@ $input-height: 45px;
 }
 
 .color-primary {
-    @include bw-text-input($label-color, $input-text-color, $label-color-focus, $focus-border-color);
+    @include bw-text-input(var(--label-color), var(--input-text-color), 
+    var(--label-color-focus), var(--focus-border-color));
 }
 
 .color-secondary {
-    @include bw-text-input($label-color-secondary, $input-text-color-secondary, 
-    $label-color-focus-secondary, $focus-border-color-secondary);
+    @include bw-text-input(var(--label-color-secondary), var(--input-text-color-secondary), 
+    var(--label-color-focus-secondary), var(--focus-border-color-secondary));
 }
 
 .color-error {
-    @include bw-text-input($label-color, $input-text-color-secondary, 
-    red, red);
+    @include bw-text-input(var(--label-color), var(--input-text-color-secondary), 
+    var(--input-error), var(--input-error));
 }
 
 
