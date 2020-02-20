@@ -12,7 +12,7 @@ import { MDCRipple } from '@material/ripple';
         label: {
             type: String,
             required: false,
-            default: "Button"
+            default: ""
         },
         color: {
             type: String,

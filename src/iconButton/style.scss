@@ -1,12 +1,15 @@
 @import "@material/icon-button/mdc-icon-button";
 
-$icon-selected-color: var(--mdc-theme-primary);
-$icon-selected-color-secondary: var(--mdc-theme-secondary);
-$icon-unselected-color: rgba(0, 0, 0, 0.472);
+:root {
+    --icon-selected-color: var(--mdc-theme-primary);
+    --icon-selected-color-secondary: var(--mdc-theme-secondary);
+    --icon-unselected-color: rgba(0, 0, 0, 0.6);
+}
 
 @mixin bw-icon-button($icon-unselected-color, $icon-selected-color) {
     .mdc-icon-button__icon {
-        @include mdc-icon-button-ink-color($icon-unselected-color);
+        color: var(--icon-unselected-color);
+        // @include mdc-icon-button-ink-color($icon-unselected-color);
         &.mdc-icon-button__icon--on {
             color: $icon-selected-color;
         }
@@ -14,9 +17,9 @@ $icon-unselected-color: rgba(0, 0, 0, 0.472);
 }
 
 .color-primary {
-    @include bw-icon-button($icon-unselected-color, $icon-selected-color);
+    @include bw-icon-button(var(--icon-unselected-color), var(--icon-selected-color));
 }
 
 .color-secondary {
-    @include bw-icon-button($icon-unselected-color, $icon-selected-color-secondary);
+    @include bw-icon-button(var(--icon-unselected-color), var(--icon-selected-color-secondary));
 }

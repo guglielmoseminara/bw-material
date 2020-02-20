@@ -1,23 +1,40 @@
 @import "@material/switch/mdc-switch";
 
-// $sw-color-primary: var(--mdc-theme-primary);
-// $sw-color-secondary: var(--mdc-theme-secondary);
-$sw-color-primary: red;
-$sw-color-secondary: red;
+:root {
+    --sw-color: var(--mdc-theme-primary);
+    --sw-color-secondary: var(--mdc-theme-secondary);
+    --sw-toggle-disabled-color: rgba(0, 0, 0, 0.6);
+}
 
-$sw-toggle-disabled-color: rgba(0, 0, 0, 0.6);
-
-.color-primary {
+@mixin bw-switch($sw-color) {
     &.mdc-switch {
-       @include mdc-switch-toggled-on-color($sw-color-primary);
-       @include mdc-switch-toggled-off-thumb-color($sw-toggle-disabled-color);
+
+        &.mdc-switch--checked {
+            .mdc-switch__thumb {
+                border-color: $sw-color;
+            }
+    
+            .mdc-switch__track {
+                opacity: 0.3;
+                border-color: $sw-color;
+                background-color: $sw-color;
+            }
+        }
+
+       @include mdc-switch-toggled-off-thumb-color(var(--sw-toggle-disabled-color));
+
+       .mdc-switch__thumb-underlay::after, 
+       .mdc-switch__thumb-underlay::before {
+            background-color: $sw-color;
+        }
     }
 }
 
-.color-secondary {
-    &.mdc-switch {
-        @include mdc-switch-toggled-on-color($sw-color-secondary);
-        @include mdc-switch-toggled-off-thumb-color($sw-toggle-disabled-color);
+.color-primary {
+    @include bw-switch(var(--sw-color));
+}
 
-    }
+.color-secondary {
+    @include bw-switch(var(--sw-color-secondary));
+
 }
