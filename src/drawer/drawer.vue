@@ -15,7 +15,7 @@
         <nav class="mdc-list" v-if="navLinksGroups">
           <template v-for="(group, i) in navLinksGroups">
             <a v-for="(link, index) in group" 
-              class="mdc-list-item mdc-list-item--activated" 
+              class="mdc-list-item" :class="{'mdc-list-item--activated' : link.isActive }" 
               :href="link.href" aria-current="page" :key="index+'a'+i"
             >
               <i v-if="link.icon" class="material-icons mdc-list-item__graphic" aria-hidden="true">{{link.icon}}</i>

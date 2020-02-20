@@ -1,19 +1,17 @@
 @import "@material/drawer/mdc-drawer";
 @import "@material/list/mdc-list";
 
-$draw-width: 300px;
-$draw-icon-color: gray;
-$draw-text-color: gray;
+:root {
+    --draw-width: 300px;
+    --draw-icon-color: #808080;
+    --draw-text-color: #808080;
+    --draw-bg-color: var(--mdc-theme--primary-bg);
+    --draw-divider-color: #808080;
+    --draw-active-icon-color: var(--mdc-theme-primary);
+    --draw-active-text-color: var(--mdc-theme-primary);
+}
 
-$draw-bg-color: var(--mdc-theme--primary-bg);
-
-$draw-divider-color: gray;
-
-// $draw-active-icon-color: var(--mdc-theme-primary);
-// $draw-active-text-color: var(--mdc-theme-primary);
-$draw-active-icon-color: red;
-$draw-active-text-color: red;
-
+// hidden page opacity
 .mdc-drawer-scrim {
     background-color: rgba(0, 0, 0, 0.32);
 }
@@ -21,13 +19,20 @@ $draw-active-text-color: red;
 .mdc-drawer {
     // height: -moz-available;
     height: -webkit-fill-available;
-    @include mdc-drawer-width($draw-width);
-    @include mdc-drawer-item-icon-ink-color($draw-icon-color);
-    @include mdc-drawer-surface-fill-color($draw-bg-color);
-    @include mdc-drawer-divider-color($draw-divider-color);
-    @include mdc-drawer-item-text-ink-color($draw-text-color);
+    @include mdc-drawer-width(var(--draw-width));
+    @include mdc-drawer-surface-fill-color(var(--draw-bg-color));
 
-    @include mdc-drawer-item-activated-icon-ink-color($draw-active-icon-color);
-    @include mdc-drawer-item-activated-text-ink-color($draw-active-text-color);
-    // @include mdc-drawer-scrim-fill-color(red);
+    .mdc-list .mdc-list-item {
+        color: var(--draw-text-color);
+        .mdc-list-item__graphic {
+            color: var(--draw-icon-color);
+        }
+        &.mdc-list-item--activated {
+            color: var(--draw-active-text-color);
+            .mdc-list-item__graphic {
+                color: var(--draw-active-icon-color);
+            }
+        }
+    }
 }
+
