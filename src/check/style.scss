@@ -1,30 +1,35 @@
 @import "@material/form-field/mdc-form-field";
 @import "@material/checkbox/mdc-checkbox";
 
-$unmarked-stroke-color: var(--mdc-theme-primary)!default;
-$unmarked-fill-color: transparent;
-$marked-stroke-color:  var(--mdc-theme-primary)!default;
-$marked-fill-color: var(--mdc-theme-primary)!default;
+:root {
+    --unmarked-stroke-color: var(--mdc-theme-primary);
+    --unmarked-fill-color: transparent;
 
-$unmarked-stroke-color-secondary: var(--mdc-theme-secondary)!default;
-$unmarked-fill-color-secondary: transparent;
-$marked-stroke-color-secondary:  var(--mdc-theme-secondary)!default;
-$marked-fill-color-secondary: var(--mdc-theme-secondary)!default;
+    --marked-stroke-color:  var(--mdc-theme-primary);
+    --marked-fill-color: var(--mdc-theme-primary);
+
+    --unmarked-stroke-color-secondary: var(--mdc-theme-secondary);
+    --unmarked-fill-color-secondary: transparent;
+
+    --marked-stroke-color-secondary:  var(--mdc-theme-secondary);
+    --marked-fill-color-secondary: var(--mdc-theme-secondary);
+}
+
 
 .color-primary {
     .mdc-checkbox {
-        @include mdc-checkbox-container-colors($unmarked-stroke-color, $unmarked-fill-color, $marked-stroke-color, $marked-fill-color);
+        @include mdc-checkbox-container-colors(var(--unmarked-stroke-color), var(--unmarked-fill-color), var(--marked-stroke-color), var(--marked-fill-color));
         .mdc-checkbox__ripple::before, .mdc-checkbox__ripple::after {
-            background-color: $marked-stroke-color!important;
+            background-color: var(--marked-stroke-color)!important;
         }
     }
 }
 
 .color-secondary {
     .mdc-checkbox {
-        @include mdc-checkbox-container-colors($unmarked-stroke-color-secondary, $unmarked-fill-color-secondary, $marked-stroke-color-secondary, $marked-fill-color-secondary);
+        @include mdc-checkbox-container-colors(var(--unmarked-stroke-color-secondary), var(--unmarked-fill-color-secondary), var(--marked-stroke-color-secondary), var(--marked-fill-color-secondary));
         .mdc-checkbox__ripple::before, .mdc-checkbox__ripple::after {
-            background-color: $marked-stroke-color-secondary!important;
+            background-color: var(--marked-stroke-color-secondary)!important;
         }
     }
 }

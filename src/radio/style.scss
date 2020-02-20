@@ -1,16 +1,17 @@
 @import "@material/form-field/mdc-form-field";
 @import "@material/radio/mdc-radio";
 
-$radio-border-color: var(--mdc-theme-primary)!default;
-$radio-border-color-unchek: $radio-border-color;
-$radio-border-color-chek: $radio-border-color;
-$radio-fill-color: $radio-border-color;
 
-$radio-border-color-secondary: var(--mdc-theme-secondary)!default;
-$radio-border-color-unchek-secondary: $radio-border-color-secondary;
-$radio-border-color-chek-secondary: $radio-border-color-secondary;
-$radio-fill-color-secondary: $radio-border-color-secondary;
-
+:root {
+    --radio-border-color: var(--mdc-theme-primary);
+    --radio-border-color-unchek: var(--radio-border-color);
+    --radio-border-color-chek: var(--radio-border-color);
+    --radio-fill-color: var(--radio-border-color);
+    --radio-border-color-secondary: var(--mdc-theme-secondary);
+    --radio-border-color-unchek-secondary: var(--radio-border-color-secondary);
+    --radio-border-color-chek-secondary: var(--radio-border-color-secondary);
+    --radio-fill-color-secondary: var(--radio-border-color-secondary);
+}
 
 
 @mixin bw-radio-color($ripple-color, $radio-border-color-unchek, 
@@ -26,14 +27,16 @@ $radio-fill-color) {
 
 .color-primary {
     .mdc-radio {
-        $ripple-color: $radio-border-color;
-        @include bw-radio-color($ripple-color, $radio-border-color-unchek, $radio-border-color-chek, $radio-fill-color);
+        $ripple-color: var(--radio-border-color);
+        @include bw-radio-color($ripple-color, var(--radio-border-color-unchek), 
+        var(--radio-border-color-chek), var(--radio-fill-color));
     }
 }
 
 .color-secondary {
     .mdc-radio {
-        $ripple-color: $radio-border-color-secondary;
-        @include bw-radio-color($ripple-color, $radio-border-color-unchek-secondary, $radio-border-color-chek-secondary, $radio-fill-color-secondary);  
+        $ripple-color: var(--radio-border-color);
+        @include bw-radio-color($ripple-color, var(--radio-border-color-unchek-secondary), 
+        var(--radio-border-color-chek-secondary), var(--radio-fill-color-secondary));  
     }
 }
