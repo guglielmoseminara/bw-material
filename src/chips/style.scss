@@ -1,0 +1,15 @@
+
+@mixin bw-chips($chip-selected-main-color) {
+    &.mdc-chip-set--choice .mdc-chip.mdc-chip--selected:hover{
+       color: $chip-selected-main-color;
+    }
+}
+
+.color-primary {
+    @include bw-chips(var(--chip-selected-main-color));
+}
+
+.color-secondary {
+    @include bw-chips(var(--chip-selected-main-color-secondary));
+}
+

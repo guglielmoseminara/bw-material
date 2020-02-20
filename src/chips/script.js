@@ -46,11 +46,15 @@ export default {
   },
   computed: {
     classes () {
-      return {
+      let classes = {
         'mdc-chip-set--choice': this.choice,
         'mdc-chip-set--filter': this.filter,
         'mdc-chip-set--input': this.input,
       }
+      if(utils.isDefined(this.color)) {
+        classes['color-'+this.color] = true;
+      }
+      return classes;
     },
   },
   mounted () {

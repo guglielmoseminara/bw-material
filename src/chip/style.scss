@@ -1,20 +1,17 @@
 
 @import "@material/chips/mdc-chips";
 
+:root {
+    --chip-selected-main-color: var(--mdc-theme-primary);
+    --chip-selected-main-color-secondary: var(--mdc-theme-secondary);
 
-// $chip-selected-main-color: var(--mdc-theme-primary);
-$chip-selected-main-color: red;
+    --chip-selected-bg-color: var(--contain-input-bg);
+    --chip-selected-bg-color-secondary: var(--contain-input-bg);
 
-$chip-selected-bg-color: rgba(211, 211, 211, 0);
+    --chip-text-color: var(--mdc-theme-on);
+    --chip-text-color-secondary: var(--mdc-theme-on-secondary);
+}
 
-// $chip-selected-main-color-secondary: var(--mdc-theme-secondary);
-$chip-selected-main-color-secondary: red;
-
-$chip-selected-bg-color-secondary: rgba(211, 211, 211, 0);
-// $chip-text-color: var(--mdc-theme-on-primary);
-// $chip-text-color-secondary: var(--mdc-theme-on-secondary);
-$chip-text-color: red;
-$chip-text-color-secondary: red;
 
 .mdc-chip__ripple {
     top: 0!important;
@@ -23,17 +20,25 @@ $chip-text-color-secondary: red;
 }
 
 @mixin bw-chip($chip-selected-main-color, $chip-selected-bg-color, $chip-text-color){
-    &.mdc-chip {
-        @include mdc-chip-ink-color($chip-text-color);
-    }
     &.mdc-chip.mdc-chip--selected {
+        color: $chip-selected-main-color;
         @include mdc-chip-fill-color($chip-selected-bg-color);
-        @include mdc-chip-selected-ink-color($chip-selected-main-color);
+        .mdc-chip__ripple::before, &.mdc-chip__ripple::after {
+            background-color: $chip-selected-bg-color;
+        }
+
+        .mdc-chip__checkmark {
+            path {
+                stroke: $chip-selected-main-color;
+            }
+        }
         &.outline {
-            @include mdc-chip-outline(1px, solid, $chip-selected-main-color);
+            border: 1px solid $chip-selected-main-color;
+        }
+        .mdc-chip__icon {
+            color: $chip-selected-main-color;
         }
     }
-
     // chiedere a marco
     // &.mdc-chip.outline {
     //     &:focus {
@@ -44,11 +49,11 @@ $chip-text-color-secondary: red;
 }
 
 .color-primary {
-    @include bw-chip($chip-selected-main-color, $chip-selected-bg-color,
-     $chip-text-color);
+    @include bw-chip(var(--chip-selected-main-color), var(--chip-selected-bg-color),
+     var(--chip-text-color));
 }
 
 .color-secondary {
-    @include bw-chip($chip-selected-main-color-secondary, 
-    $chip-selected-bg-color-secondary,  $chip-text-color-secondary);
+    @include bw-chip(var(--chip-selected-main-color-secondary), 
+    var(--chip-selected-bg-color-secondary), var(--chip-text-color-secondary));
 }
