@@ -9,9 +9,13 @@ $mdc-fab-mini-height: 40px !default;
   // for contain button
   --btn-text-color: var(--mdc-theme-on-primary);
   --btn-bg-color: var(--mdc-theme-primary);
+
+  --btn-text-color-secondary: var(--mdc-theme-on-secondary);
+  --btn-bg-color-secondary: var(--mdc-theme-secondary);
   
   // for text and outline button
   --btn-color-main: var(--mdc-theme-primary);
+  --btn-color-main-secondary: var(--mdc-theme-secondary);
   --btn-radius: 4px;
 
   --btn-outline-border: 1px;
@@ -47,7 +51,13 @@ $mdc-fab-mini-height: 40px !default;
   @include mdc-button-ink-color($btn-color);
 }
 
-@mixin button($btn-color-main,  $btn-color, $btn-color-bg) {
+@mixin bw-bn-ripple($color) {
+    .mdc-button__ripple::after, .mdc-button__ripple::before {
+      background-color: $color;
+    }
+}
+
+@mixin button($btn-color-main, $btn-color, $btn-color-bg) {
     // riplle otpion
     @include mdc-ripple-surface;
     @include mdc-ripple-radius-bounded;
@@ -55,11 +65,13 @@ $mdc-fab-mini-height: 40px !default;
     
     @include mdc-fab-icon-size(var(--fab-font), var(--fab-font));
     
+    &:not(.outline):not(.text) {
+        @include bw-bn-ripple($btn-color);
+    }
+
     &.contain {
       // @extend .mdc-button--raised;
       @include btn-contain($btn-color-bg, $btn-color);
-      // ripple color DO NOT USE var(--x) material bug
-      @include mdc-states(rgb(255, 255, 255), false);      
     }
     
     .mdc-button__icon:not(:last-child) {
@@ -71,15 +83,13 @@ $mdc-fab-mini-height: 40px !default;
       @extend .mdc-button--outlined;
       @include mdc-button-outline-color($btn-color-main);
       @include mdc-button-ink-color($btn-color-main);
-
+      @include bw-bn-ripple($btn-color-main);
       border-width: var(--btn-outline-border);
-      
-      // ripple color DO NOT USE var(--x) material bug
-      @include mdc-states(rgb(255, 0, 0), false);
     }
     
     &.text {
       @include mdc-button-ink-color($btn-color-main);
+      @include bw-bn-ripple($btn-color-main);
     }
     
     &.round-full {
@@ -104,10 +114,7 @@ $mdc-fab-mini-height: 40px !default;
 
 .color-secondary {
   &.mdc-button, .mdc-fab {
-    --btn-text-color: var(--mdc-theme-on-secondary);
-    --btn-bg-color: var(--mdc-theme-secondary);
-    --btn-color-main: var(--mdc-theme-secondary);
-    @include button(var(--btn-color-main), var(--btn-text-color), var(--btn-bg-color));
+    @include button(var(--btn-color-main-secondary), var(--btn-text-color-secondary), var(--btn-bg-color-secondary));
   }
 }
 
