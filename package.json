@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "vue serve src/index.vue",
     "build": "npx bili --bundle-node-modules",
-    "build2": "vue build src/BwMaterialButton.vue"
+    "build2": "vue build src/BwMaterialButton.vue",
+    "add-router": "vue add router"
   },
   "files": [
     "dist/*"
@@ -38,7 +39,10 @@
     "@material/theme": "^4.0.0",
     "@material/top-app-bar": "^4.0.0",
     "@material/typography": "^4.0.0",
-    "range-slider-vue": "^1.0.3"
+    "bootstrap": "^4.4.1",
+    "material-design-icons": "^3.0.1",
+    "range-slider-vue": "^1.0.3",
+    "vue-router": "^3.1.5"
   },
   "devDependencies": {
     "@vue/cli": "^4.2.2",
