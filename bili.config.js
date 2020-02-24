@@ -6,6 +6,7 @@ module.exports = {
             style: {
                 preprocessOptions: {
                     scss: {
+                        data: `@import "./src/global.scss";`,
                         includePaths: ['node_modules']
                     }
                 }

@@ -25,7 +25,6 @@ import BwMaterialFooter from "./footer/footer.vue";
 import BwMaterialLineRipple from "./lineRipple/lineRipple.vue";
 import BwMaterialTextField from "./textField/textField.vue";
 
-
 export default {
     install(Vue, options) {
         Vue.component("bw-material-button", BwMaterialButton);      
@@ -50,5 +49,47 @@ export default {
         Vue.component("bw-material-footer", BwMaterialFooter);
         Vue.component("bw-material-line-ripple", BwMaterialLineRipple);
         Vue.component("bw-material-text-field", BwMaterialTextField);
+
+        // DIRECTIVE
+        Vue.directive('elevation', {
+            bind: function (el, binding) {
+                setTimeout(()=> {
+                if (binding.value != null) {
+                    const n = Number(binding.value)
+                    el.classList.add(`mdc-elevation--z${n}`)
+                }
+                if (binding.modifiers.transition) {
+                    el.classList.add('mdc-elevation-transition')
+                }
+                }, 1);
+            },
+            componentUpdated: function (el, binding) {
+                if (Number(binding.oldValue) !== Number(binding.value)) {
+                if (binding.oldValue != null) {
+                    const n = Number(binding.oldValue)
+                    el.classList.remove(`mdc-elevation--z${n}`)
+                }
+                if (binding.value != null) {
+                    const n = Number(binding.value)
+                    el.classList.add(`mdc-elevation--z${n}`)
+                }
+                }
+                if (!binding.modifiers.transition && el.classList.contains('mdc-elevation-transition')) {
+                el.classList.remove('mdc-elevation-transition')
+                }
+                if (binding.modifiers.transition && !el.classList.contains('mdc-elevation-transition')) {
+                el.classList.add('mdc-elevation-transition')
+                }
+            },
+            unbind: function (el, binding) {
+                if (binding.value != null) {
+                const n = Number(binding.value)
+                el.classList.remove(`mdc-elevation--z${n}`)
+                }
+                if (binding.modifiers.transition) {
+                el.classList.remove('mdc-elevation-transition')
+                }
+            }
+            })
     }
 };
