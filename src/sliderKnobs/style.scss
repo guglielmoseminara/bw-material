@@ -8,63 +8,67 @@ $tooltip-text-color: rgb(255, 255, 255);
 $slider-main-color-secondary: var(--mdc-theme-secondary);
 $slider-line-color-secondary: rgba(238, 155, 155, 0.253);
 
+@keyframes ripple {
+    from {
+        opacity: 0.08;
+        transform: scale(0.5);
+      }
+    to {
+      opacity: 0.13;
+      transform: scale(1);
+    }
+}
 
 @mixin bw-bg-opacity($color, $opacity) {
     background: $color;
-    background: rgba($color, $opacity);
+    opacity: $opacity;
 }
 
-@mixin bw-slider($slider-main-color, $slider-line-color) {
-    div.vue-slider.vue-slider-ltr {
-        height: 2px!important;
+@mixin bw-slider-knobs($slider-main-color, $slider-line-color) {
+    div.round-bar {
+        padding: 0!important;
     }
     
-    div.vue-slider-rail {
-        background-color: $slider-line-color;
-        .vue-slider-process {
-            background-color: $slider-main-color;
+    div.round-bar-track {
+        background-color: $slider-line-color!important;
+        .track-round {
+            background-color: $slider-main-color!important;
         }
     }
-    .vue-slider-dot-handle {
+    .track-ball {
         background-color: $slider-main-color!important;
         box-shadow: none!important;
     
-        &:hover::after, &:active::after {
+        &:hover::after, &:active::after, &:active::before {
             content: '';
             width:40px;
             height: 40px;
             display: block;
             position: absolute;
-            top: -100%;
+            top: -14px;
             left: calc(50% - 20px);
             border-radius: 50%;
         }
         &:hover::after {
-            @include bw-bg-opacity($slider-main-color, 0.2);
+            @include bw-bg-opacity($slider-main-color, 0.08);
         }
-        &:active::after {
-            background-color: $slider-line-color;
+        &:active::before {
+            opacity: 0.13;
+            animation: ripple .1s;
+            background: $slider-main-color;
         } 
     }
-    
-    .vue-slider-dot-tooltip .vue-slider-dot-tooltip-inner {
-        background-color: $slider-main-color!important;
-        border-color:  $slider-main-color!important;
-        border-radius: 45%;
-        padding: 0 3px 5px 3px;
-        color: $tooltip-text-color;
-        &::after {
-            height: 10px;
-            border-width: 9px;
-            top: calc(100% - 4px);
-        }
+
+    .knobs-tooltip {
+        height: 40px;
+        width: 40px;
     }
 }
 
 .color-primary {
-    @include bw-slider($slider-main-color, $slider-line-color);
+    @include bw-slider-knobs($slider-main-color, $slider-line-color);
 }
 
 .color-secondary {
-    @include bw-slider($slider-main-color-secondary, $slider-line-color-secondary);
+    @include bw-slider-knobs($slider-main-color-secondary, $slider-line-color-secondary);
 }

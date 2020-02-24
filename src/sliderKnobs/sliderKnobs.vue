@@ -1,26 +1,13 @@
 <template>
 <div ref="slider" :class="classes">
-  <vue-slider v-if="data.length === 0" ref="sliderThumb"
-    v-model="myvalue"
-    :min="min"
-    :max="max"
-    :marks="displayMarkers"
-    :use-keyboard="true"
-    :tooltip="tooltip"
-    @change="changeModel($event)"
-    >
-  </vue-slider>
-  <vue-slider v-else  ref="sliderThumb"
-    v-model="myvalue"
-    :min="min"
-    :max="max"
-    :data="data"
-    :marks="displayMarkers"
-    :use-keyboard="true"
-    :tooltip="tooltip"
-    @change="changeModel($event)"
-    >
-  </vue-slider>
+  <range-slider ref="sliderThumb"
+    :min="min" :max="max"  :step="step"
+    :start="myvalue[0]" :end="myvalue[1]"
+    @slideEnd="slideEnd"
+    :ball-width="12"
+    :bar-height="2"
+  >
+  </range-slider>
 </div>
   
 </template>

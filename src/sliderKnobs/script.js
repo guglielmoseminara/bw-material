@@ -1,6 +1,6 @@
 import { MDCRipple } from '@material/ripple';
 import utils from "../utils/utils";
-import VueSlider from 'vue-slider-component';
+import RangeSlider from 'range-slider-vue';
 
 export default {
   model: {
@@ -8,17 +8,8 @@ export default {
     event: 'input'
   },
   props: {
-    displayMarkers: {
-      type: Boolean,
-      default: false
-    },
     value: {
-      type: [Number, Array, String],
-      default: 0
-    },
-    tooltip: {
-      type: String,
-      default: 'none' // always, active
+      type: [Array],
     },
     min: {
       type: Number,
@@ -33,10 +24,6 @@ export default {
       validator: value => value > 0,
       default: 1
     },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
     data: {
       type: Array,
       default: () => [],
@@ -44,11 +31,16 @@ export default {
     color: {
       type: String,
       default: 'primary'  
+    },
+    tooltip: {
+      type: String,
+      default: 'none' // always, active
     }
   },
   data () {
     return {
-      myvalue: this.value
+      myvalue: this.value,
+      // tooltipLeftNode: undefined,
     }
   },
   computed: {
@@ -66,15 +58,25 @@ export default {
     if(utils.isDefined(this.color)) {
         this.classes['color-'+this.color] = true;
     }
+
+    // let target = this.$refs.sliderThumb.$el.querySelector('.track-ball-left');
+    // this.tooltipLeftNode = utils.createAndAppendNode(target, 'div', {}, ['knobs-tooltip']);
+    // this.tooltipLeftNode.innerText = this.value[0];
   },
   beforeDestroy () {
   },
   methods: {
     changeModel(ev) {
       this.$emit('input', this.myvalue);
+    },
+    slideEnd(e) {
+      this.myvalue[0] = e.start;
+      this.myvalue[1] = e.end;
+      this.$emit('input', this.myvalue);
+      // this.tooltipLeftNode.innerText = this.myvalue[0];
     }
   },
   components: {
-    VueSlider
-  }
+    RangeSlider
+  },
 }
