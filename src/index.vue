@@ -1,6 +1,8 @@
 <template>
     <div>
-        <bw-material-button></bw-material-button>
+
+        <bw-demo-tipograpy></bw-demo-tipograpy>
+        <!-- <bw-material-button></bw-material-button>
 
         <bw-material-text-field outlined id="my-text-field1" color="primary" placeholder="E-mail">
                 <bw-material-floating-label for="my-text-field1">Subscription</bw-material-floating-label>
@@ -12,7 +14,7 @@
             :max="99"
             v-model="singleSliderModelKnobsRange"
         >
-        </bw-material-slider-knobs>
+        </bw-material-slider-knobs> -->
     </div>
 </template>
 
@@ -22,9 +24,13 @@
     import BwMaterialTextField from './index';
     import BwMaterialFloatingLabel from './index';
 
+    import BwDemoTipography from './demo/tipography/component.vue';
+
     Vue.use(BwMaterial);
     Vue.use(BwMaterialTextField);
     Vue.use(BwMaterialFloatingLabel);
+
+    Vue.component("bw-demo-tipograpy", BwDemoTipography);
 
     export default {
         data () {
@@ -32,5 +38,9 @@
                 singleSliderModelKnobsRange: [25, 80]
             }
         },
+        components: {
+
+        }
     }
 </script>
+
