@@ -29,4 +29,5 @@ module.exports = {
     publicPath: './',
     filenameHashing: false,
     assetsDir: './',
+    runtimeCompiler: true
 };

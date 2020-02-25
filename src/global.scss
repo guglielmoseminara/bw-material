@@ -54,6 +54,9 @@ body {
     @extend .mdc-typography;
 }
 
+html {
+    min-height: 100%;
+}
 
 
 // Material Override

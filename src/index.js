@@ -25,6 +25,38 @@ import BwMaterialFooter from "./footer/footer.vue";
 import BwMaterialLineRipple from "./lineRipple/lineRipple.vue";
 import BwMaterialTextField from "./textField/textField.vue";
 
+
+// import Vue from 'vue';
+// import routes from './router/index';
+// import Router from 'vue-router';
+
+// if (process.env.NODE_ENV == 'development') {
+//     Vue.use(Router);
+//     var app2 = new Vue({
+//       el: '#app',
+//       data: {
+//         message: 'You loaded this page on ' + new Date().toLocaleString()
+//       },
+//       router: routes
+//     });
+// }
+
+import Vue from 'vue';
+import routes from './router/index';
+
+if (process.env.NODE_ENV == 'development') {
+    import('vue-router').then(Router => {
+        Vue.use(Router);
+        var app2 = new Vue({
+          el: '#app',
+          data: {
+            message: 'You loaded this page on ' + new Date().toLocaleString()
+          },
+          router: routes
+        });
+    })
+}
+
 export default {
     install(Vue, options) {
         Vue.component("bw-material-button", BwMaterialButton);      

@@ -1,21 +1,19 @@
 {
-  "private": false,
   "name": "bw-material",
   "version": "1.0.1",
+  "private": false,
   "description": "",
-  "main": "index.js",
+  "author": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "vue serve src/index.vue",
-    "build": "npx bili --bundle-node-modules",
+    "build": "npx bili --bundle-node-modules --env.NODE_ENV production",
     "build2": "vue build src/BwMaterialButton.vue",
-    "add-router": "vue add router"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "main": "index.js",
   "files": [
     "dist/*"
   ],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@material/animation": "^4.0.0",
     "@material/button": "^4.0.0",
@@ -41,11 +39,12 @@
     "@material/typography": "^4.0.0",
     "bootstrap": "^4.4.1",
     "material-design-icons": "^3.0.1",
-    "range-slider-vue": "^1.0.3",
-    "vue-router": "^3.1.5"
+    "range-slider-vue": "^1.0.3"
   },
   "devDependencies": {
+    "vue-router": "^3.1.5",
     "@vue/cli": "^4.2.2",
+    "@vue/cli-plugin-router": "^4.2.2",
     "@vue/cli-service-global": "^4.2.2",
     "bili": "^4.8.1",
     "node-sass": "^4.13.1",
@@ -53,5 +52,6 @@
     "sass": "^1.25.0",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"
-  }
+  },
+  "license": "ISC"
 }

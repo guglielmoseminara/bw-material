@@ -1,8 +1,8 @@
 <template>
-        <bw-material-header :scroll-target="$refs.mainContent" :nav-links-groups="[
+        <bw-material-header :fixed="true" :scroll-target="$refs.mainContent" :nav-links-groups="[
             [
-                {name: 'card doc', icon: 'featured_video', href: 'demo-card'}, 
-                {name: 'chips doc', href: 'demo-chips'}
+                {name: 'card doc', icon: 'featured_video', href: 'card'}, 
+                {name: 'chips doc', href: 'chips'}
             ],
             [
                 {name: 'text field', icon: 'featured_video', href: 'demo-text'}, 
@@ -15,7 +15,7 @@
             class="mt-5"
         >
             <template slot="startSlot">
-                <img src="{{URL::asset('images/fucktotum.png')}}">
+                <img src="assets/fucktotum.png">
             </template>
             <template slot="centerSlot">
                 <span class="mdc-top-app-bar__title">catania, CA</span>

@@ -1,31 +1,42 @@
 <template>
-    <div>
+        
+        <div class="app2">
+            <div class="appheader">
+                <bw-material-header raised v-elevation="1" 
+                    :fixed="true" :scroll-target="$refs.mainContent" 
+                    :nav-links-groups="[
+                    [
+                        {name: 'card doc', icon: 'featured_video', href: 'card'}, 
+                        {name: 'chips doc', href: 'chips'}
+                    ],
+                    [
+                        {name: 'text field', icon: 'featured_video', href: 'text'}, 
+                        {name: 'input control', href: 'control'}
+                    ],
+                    [
+                        {name: 'header', icon: 'featured_video', href: 'demo-header'}, 
+                    ],
+                    ]"
+                >
+                    <template slot="centerSlot">
+                        <span class="mdc-top-app-bar__title">catania, CA</span>
+                        <span class="mdc-top-app-bar__title">San Francisco, CA</span>
+                    </template>
+                    <template slot="drawerHeaderSlot">
+                        Drawer header slot
+                        </template>
+                    <template slot="endSlot">
+                        <button class="mdc-icon-button material-icons mdc-top-app-bar__action-item--unbounded" aria-label="Print this page">print</button>
+                        <button class="mdc-icon-button material-icons mdc-top-app-bar__action-item--unbounded" aria-label="Bookmark this page">bookmark</button>  
+                    </template>
+                </bw-material-header>
+            </div>
 
+            <div ref="mainContent">
+                mah
+                <router-view />
+            </div>
 
-        <bw-demo-tipograpy v-if="model=='tipography'"></bw-demo-tipograpy>
-
-        <bw-demo-button v-if="model=='button'"></bw-demo-button>
-
-        <bw-demo-card v-if="model=='card'"></bw-demo-card>
-
-        <bw-demo-chips v-if="model=='chips'"></bw-demo-chips>
-
-        <bw-demo-control v-if="model=='control'"></bw-demo-control>
-
-
-        <!-- <bw-material-button></bw-material-button>
-
-        <bw-material-text-field outlined id="my-text-field1" color="primary" placeholder="E-mail">
-                <bw-material-floating-label for="my-text-field1">Subscription</bw-material-floating-label>
-                <bw-material-line-ripple slot="bottomLine"/>
-        </bw-material-text-field>
-
-        <bw-material-slider-knobs
-            :max="99"
-            :min="9"
-            v-model="singleSliderModelKnobsRange"
-        >
-        </bw-material-slider-knobs> -->
     </div>
 </template>
 
@@ -35,28 +46,12 @@
     Vue.prototype.$eventHub = new Vue(); // Global event bus
     import BwMaterial from './index';
     import BwMaterialTextField from './index';
-    import BwMaterialFloatingLabel from './index';
-
-    import BwDemoTipography from './demo/tipography/component.vue';
-    import BwDemoButton from './demo/button/component.vue';
-    import BwDemoCard from './demo/card/component.vue';
-    import BwDemoChips from './demo/chips/component.vue';
-    import BwDemoControl from './demo/control/component.vue';
-    // import BwDemoHeader from './demo/header/component.vue';
-
-    
+    import BwMaterialFloatingLabel from './index';   
 
     Vue.use(BwMaterial);
     Vue.use(BwMaterialTextField);
     Vue.use(BwMaterialFloatingLabel);
     import Routes from './router/index';
-
-    Vue.component("bw-demo-tipograpy", BwDemoTipography);
-    Vue.component("bw-demo-button", BwDemoButton);
-    Vue.component("bw-demo-card", BwDemoCard);
-    Vue.component("bw-demo-chips", BwDemoChips);
-    Vue.component("bw-demo-control", BwDemoControl);
-    // Vue.component("bw-demo-header", BwDemoHeader);
 
     export default {
         data () {
@@ -71,6 +66,9 @@
     }
 </script>
 
-<style  lang="scss">
+<style lang="scss">
     @import'~bootstrap/dist/css/bootstrap.css';
+    .appheader {
+        height: 64px;
+    }
 </style>
