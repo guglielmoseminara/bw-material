@@ -3,7 +3,8 @@
 
   },
   data() {
-    return {}
+    return {
+    }
   },
   mounted() {
   

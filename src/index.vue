@@ -1,5 +1,4 @@
 <template>
-        
         <div class="app2">
             <div class="appheader">
                 <bw-material-header raised v-elevation="1" 
@@ -33,10 +32,8 @@
             </div>
 
             <div ref="mainContent">
-                mah
                 <router-view />
             </div>
-
     </div>
 </template>
 
