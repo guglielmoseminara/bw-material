@@ -68,4 +68,50 @@
     .appheader {
         height: 64px;
     }
+
+
+// Material Override
+:root {
+    --mdc-theme-primary: #AE1B21;
+    --mdc-rgba-theme-primary: 174, 27, 33;
+
+    --mdc-theme-on-primary: #ffffff;
+
+    --mdc-theme-text-primary-on-light: #000000;
+    --mdc-theme-text-secondary-on-light: #000000;
+
+    --mdc-theme-secondary: #0b156b;
+    --mdc-rgba-theme-secondary: 11, 21, 107;
+
+
+    --mdc-theme-on-secondary: #cf96e6;
+    --mdc-theme--secondary-bg: #000000;
+
+    --mdc-theme--primary-bg: #f5f8f6;
+    --mdc-theme-secondary-bg: #ffee00;
+
+
+    --contain-input-bg: rgba(0, 0, 0, 0.12);
+
+    --label-color: rgba(0, 0, 0, 0.6);
+    --label-color-secondary: rgba(0, 0, 0, 0.6);
+
+    --footer-text-color: var(--bw-text-link);
+    --footer-text-hover-color: linear-gradient(93.61deg, #EB643F -0.04%, #F8017A 49.25%, #994E9D 99.89%);
+    --footer-divider-color: linear-gradient(93.61deg, #EB643F -0.04%, #F8017A 49.25%, #994E9D 99.89%);
+
+
+    --icon-selected-color: pink;
+    // --mdc-theme-background: 
+    // --mdc-theme-surface: black;
+    // --mdc-theme-on-surface: black;
+    // --mdc-text-primary-on-light: black;
+
+    --bw-text-link: rgb(149, 149, 149);
+    --bw-text-link-hover: rgb(29, 29, 29);
+
+    --mdc-chip-selected: #158b15;
+    --btn-text-color-secondary: white;
+}
+
 </style>

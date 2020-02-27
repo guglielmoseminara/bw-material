@@ -17,7 +17,7 @@
             class="mt-5"
         >
             <template slot="startSlot">
-                <img src="@/assets/fucktotum.png">
+                <img src="src/assets/fucktotum.png">
             </template>
             <template slot="centerSlot">
                 <span class="mdc-top-app-bar__title">catania, CA</span>
@@ -36,7 +36,7 @@
     <div style="position: absolute; top: 100px">
         <bw-material-header :scroll-target="$refs.mainContent" class="my-5" :start-menu="true">
             <template slot="startSlot">
-                <img src="@/assets/fucktotum.png">
+                <img src="src/assets/fucktotum.png">
             </template>
             <template slot="centerSlot">
                 <span class="mdc-top-app-bar__title">catania, CA</span>
