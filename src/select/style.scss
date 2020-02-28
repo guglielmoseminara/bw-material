@@ -1,0 +1,58 @@
+
+@use "@material/list/mdc-list";
+@use "@material/menu-surface/mdc-menu-surface";
+@use "@material/menu/mdc-menu";
+@import "@material/select/mdc-select";
+
+
+:root {
+    --select-main-color: var(--mdc-theme-primary);
+    --select-main-color-secondary: var(--mdc-theme-secondary);
+
+}
+
+.mdc-select  {
+    .mdc-select__anchor, .mdc-select__selected-text {
+        height: var(--input-height);
+        line-height: 1rem;
+
+        .mdc-select__dropdown-icon {
+            bottom: 9px;
+        }
+    }
+    &:not(.mdc-select--outlined) .mdc-floating-label,
+    #outlined-select-label:not(.mdc-floating-label--float-above) {
+        top: 14px;
+    }
+}
+
+
+@mixin bw-select($main-color) {
+    &.mdc-select {
+        @include mdc-select-focused-outline-color($main-color);
+        @include mdc-select-focused-label-color($main-color);
+        @include mdc-select-hover-outline-color($main-color);
+        @include mdc-select-hover-bottom-line-color($main-color);
+        @include mdc-select-icon-color($main-color);
+
+        .mdc-select__dropdown-icon {
+            background-image: url("data:image/svg+xml,%3Csvg width='10px' height='5px' viewBox='7 10 10 5' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cpolygon id='Shape' stroke='none' fill='%23575757' fill-rule='evenodd' opacity='1' points='7 10 12 15 17 10'%3E%3C/polygon%3E%3C/svg%3E");
+        }
+
+        // @include mdc-select-container-fill-color($main-color);
+    }
+}
+
+.color-primary {
+   @include bw-select(var(--select-main-color));
+}
+
+.color-secondary {
+    @include bw-select(var(--select-main-color-secondary));
+   
+}
+
+
+.mdc-select--outlined {
+    
+}

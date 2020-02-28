@@ -14,6 +14,30 @@
         <bw-material-text-field-icon icon="favorite" slot="trailingIcon"></bw-material-text-field-icon>
         <bw-material-line-ripple slot="bottomLine"/>
     </bw-material-text-field>
+
+    <br>
+    <br>
+    <bw-material-select type="outline" 
+        label="label"
+        color="secondary"
+        v-model="selectModel" :options="selectOptions"
+        :config-options="{codeField: 'code', nameField: 'name'}"
+    ></bw-material-select>
+    <br>
+    <bw-material-select type="contain"
+        label="label"
+        v-model="selectModel2" :options="selectOptions"
+    ></bw-material-select>
+
+    <br><br>
+    DISABLED
+    <bw-material-select type="contain"
+        label="label"
+        :disabled="true"
+        v-model="selectModel2" :options="selectOptions"
+    ></bw-material-select>
+
+
     <br><br>
     <h5 class="mb-3">Disabled:</h5>
     <bw-material-text-field v-model="textFieldModel" id="my-text-field2" disabled>
@@ -49,16 +73,6 @@
     <bw-material-text-field v-model="textFieldModel" id="my-text-field6" outlined color="secondary">
         <bw-material-floating-label for="my-text-field6" float-above>Hint text</bw-material-floating-label>
     </bw-material-text-field>
-
-
-    <h5 class="my-4">Form generator usage</h5>
-    {{modelText}}
-    <form>
-        <bw-material-button v-on:click-btn="submitTextForm"
-            label="submit" class="mb-4" type="contain" color="secondary"
-            size="small"
-        ></bw-material-button>
-    </form>
 
   </div>
 </div>

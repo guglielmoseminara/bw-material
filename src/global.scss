@@ -1,7 +1,3 @@
-.prova {
-    color: purple;
-}
-
 @import "@material/typography/mdc-typography";
 @import "@material/elevation/mdc-elevation";
 @import "@material/ripple/mixins";
@@ -63,12 +59,12 @@ html {
 }
 
 
-.bw-cta-link {
-    @extend .mdc-typography--subtitle2;
- }
+// .bw-cta-link {
+//     @extend .mdc-typography--subtitle2;
+//  }
 
- .bw-caption {
-    @extend .mdc-typography--caption;
-    font-weight: 500;
- }
+//  .bw-caption {
+//     @extend .mdc-typography--caption;
+//     font-weight: 500;
+//  }
 
