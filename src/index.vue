@@ -39,6 +39,8 @@
 
 <script>
     import Vue from 'vue';
+
+    console.log('****** welcome to bw-material demo! ******');
     
     Vue.prototype.$eventHub = new Vue(); // Global event bus
     import BwMaterial from './index';
