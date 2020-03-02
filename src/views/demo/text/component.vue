@@ -15,21 +15,34 @@
         <bw-material-line-ripple slot="bottomLine"/>
     </bw-material-text-field>
 
-    <br>
-    <br>
+    <br><br>
     <bw-material-select type="outline" 
         label="label"
         color="secondary"
         v-model="selectModel" :options="selectOptions"
-        :config-options="{codeField: 'code', nameField: 'name'}"
+        :config-options="{codeField: 'id', nameField: 'name', 'valueField': 'id'}"
     ></bw-material-select>
-    <br>
+    {{selectModel}}
+    <br><br>
+
+
     <bw-material-select type="contain"
         label="label"
         v-model="selectModel2" :options="selectOptions"
     ></bw-material-select>
+    {{selectModel2}}
 
     <br><br>
+
+    <bw-material-select type="outline" 
+        label="label"
+        color="secondary"
+        v-model="selectModel3" :options="selectOptions"
+        :config-options="{codeField: 'code', nameField: 'name'}"
+    ></bw-material-select>
+    {{selectModel3}}
+    <br><br>
+
     DISABLED
     <bw-material-select type="contain"
         label="label"

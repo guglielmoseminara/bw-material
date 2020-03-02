@@ -25,10 +25,11 @@
   </div>
 
   <div class="mdc-select__menu mdc-menu mdc-menu-surface">
-    <ul class="mdc-list">
-      <li class="mdc-list-item mdc-list-item--selected" :data-value="''" aria-selected="true"></li>
-      
-      <li class="mdc-list-item" @click="selectClicked(option)" :data-value="index"
+    <ul class="mdc-list">     
+      <li class="mdc-list-item" 
+        :class="{'mdc-list-item--selected' : isOptionSelected(option)}"
+        @click="selectClicked(option)" :data-value="option[configOptions.codeField]" 
+        :aria-selected="isOptionSelected(option)"
         v-for="(option, index) in options"
         :key="index" 
       >
@@ -36,7 +37,6 @@
       </li>
     </ul>
   </div>
-  {{value}}
 </div>
 </template>
 

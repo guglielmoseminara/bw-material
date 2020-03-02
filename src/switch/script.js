@@ -1,5 +1,4 @@
 import {MDCSwitch} from '@material/switch';
-import {MDCSwitchFoundation} from '@material/switch';
 
 import utils from "../utils/utils";
 

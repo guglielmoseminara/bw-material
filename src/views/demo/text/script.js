@@ -1,67 +1,27 @@
 export default {
-  inject: ['$validator'],
   props: {
 
   },
   data() {
     return {
-      textFieldModel: '',
-      formOptions: {
-        validateAfterChanged: false,
-        validateAsync: true,
-        validationScope: 'examplescope',
-      },
-      schemaText: {
-        groups: [
-          {
-            fields: [
-              {
-                id: "prova id",
-                type: "bw_text",
-                inputType: 'text',
-                placeholder: "prova placeholder",
-                textLabel: "prova",
-                color: "primary",
-                attrs: [{ "outlined": true }, { "textarea": true }, { "maxlength": 20 }, { "minlength": 2 },], // textarea
-                model: "text1",
-                rules: "required"
+      textFieldModel: 'example',
+      selectModel: 'a20',
+      selectModel2: {"name": "prova 20", code: "20", id: 'a20'},
+      
+      selectModel3: {"name": "prova 20", code: "20"},
+      
+      selectOptions: [
+        {"name": "prova 10", code: "10", id: 'a10'}, 
+        {"name": "prova 20", code: "20", id: 'a20'}, 
+        {"name": "prova 30", code: "30", id: 'a30'},
 
-              },
-              {
-                id: "prova id2",
-                type: "bw_text",
-                inputType: 'text',
-                placeholder: "prova2 placeholder",
-                textLabel: "prova",
-                color: "primary",
-                attrs: [{ "maxlength": 20 }, { "minlength": 2 },], // textarea
-                model: "text2",
-                rules: "required|min:5"
-              },
-            ]
-          }
-        ]
-      },
-      modelText: {
-        text1: "",
-        text2: "",
-      },
+      ]
     }
   },
   mounted() {
 
   },
   methods: {
-    onValidateData() {
-      
-    },
-    submitTextForm() {
-      this.$validator.validate('examplescope.*').then(valid => {
-        if (!valid) {
-          // do stuff if not valid.
-        }
-      }).catch(() => {
-      });
-    },
+  
   }
 }
