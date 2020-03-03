@@ -82,7 +82,9 @@ export default {
     this.internalOptions = this.options.map(a => ({...a}));
     this.instantiate();
     
-    this.initChecked();
+    if(this.value.length > 0) {
+      this.initChecked();
+    }
     
     
   },
