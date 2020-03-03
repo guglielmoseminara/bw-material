@@ -5,6 +5,10 @@ export default {
   data() {
     return {
       textFieldModel: 'example',
+      multiselectModel: [],
+      multiselectModel2: [],
+
+
       selectModel: 'a20',
       selectModel2: {"name": "prova 20", code: "20", id: 'a20'},
       

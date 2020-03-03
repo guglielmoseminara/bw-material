@@ -1,0 +1,11 @@
+@import "../select/style.scss";
+
+.mdc-select__menu .bw-menu-item {
+    @extend .mdc-list-item;
+    cursor: pointer;
+    label {
+        cursor: pointer;
+        margin-bottom: 0;
+        padding: 10px 0;
+    }
+}

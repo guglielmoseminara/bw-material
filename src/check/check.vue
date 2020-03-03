@@ -9,7 +9,7 @@
                :value="value"
                :required="required"
                :disabled="disabled"
-               @change="onChange($event)"
+               @click="onChange($event)"
                class="mdc-checkbox__native-control"
                :checked="state">
             <div class="mdc-checkbox__background">

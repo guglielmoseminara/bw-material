@@ -14,6 +14,26 @@
         <bw-material-text-field-icon icon="favorite" slot="trailingIcon"></bw-material-text-field-icon>
         <bw-material-line-ripple slot="bottomLine"/>
     </bw-material-text-field>
+    
+    <br><br>
+    <bw-material-multiselect type="outline" 
+        label="label"
+        color="secondary"
+        v-model="multiselectModel" :options="selectOptions"
+        :config-options="{codeField: 'id', nameField: 'name', 'valueField': 'id'}"
+    ></bw-material-multiselect>
+    {{multiselectModel}}
+    <br><br>
+
+    <br><br>
+    <bw-material-multiselect type="outline" 
+        label="label"
+        color="secondary"
+        v-model="multiselectModel2" :options="selectOptions"
+        :config-options="{codeField: 'id', nameField: 'name'}"
+    ></bw-material-multiselect>
+    {{multiselectModel2}}
+    <br><br>
 
     <br><br>
     <bw-material-select type="outline" 

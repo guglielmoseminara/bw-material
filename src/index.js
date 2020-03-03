@@ -25,7 +25,7 @@ import BwMaterialFooter from "./footer/footer.vue";
 import BwMaterialLineRipple from "./lineRipple/lineRipple.vue";
 import BwMaterialTextField from "./textField/textField.vue";
 import BwMaterialSelect from "./select/select.vue";
-
+import BwMaterialMultiselect from "./multiselect/multiselect.vue";
 
 import Vue from 'vue';
 // import routes from './router/index';
@@ -70,6 +70,8 @@ export default {
         Vue.component("bw-material-line-ripple", BwMaterialLineRipple);
         Vue.component("bw-material-text-field", BwMaterialTextField);
         Vue.component("bw-material-select", BwMaterialSelect);
+        Vue.component("bw-material-multiselect", BwMaterialMultiselect);
+
 
 
         // DIRECTIVE

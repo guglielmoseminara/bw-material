@@ -25,15 +25,24 @@
   </div>
 
   <div class="mdc-select__menu mdc-menu mdc-menu-surface">
-    <ul class="mdc-list">     
-      <li class="mdc-list-item" 
-        :class="{'mdc-list-item--selected' : isOptionSelected(option)}"
-        @click="selectClicked(option)" :data-value="option[configOptions.codeField]" 
-        :aria-selected="isOptionSelected(option)"
-        v-for="(option, index) in options"
+    <ul class="mdc-list">  
+      <li class="mdc-list-item d-none" 
+        :class="{'mdc-list-item--selected' : isOptionSelected()}"
+        :data-value="getFormattedValue" 
+        :aria-selected="isOptionSelected()"
+      ></li>
+      <li class="bw-menu-item" 
+        v-for="(option, index) in internalOptions"
         :key="index" 
       >
-        {{option[configOptions.nameField || 'name']}}
+        <bw-material-check 
+          :name="option[configOptions.codeField]" 
+          :value="option[configOptions.codeField]" 
+          :label="option[configOptions.nameField || 'name']"
+          v-model="option['checked']"
+          @input="selectClicked(option, index)"
+        >
+        </bw-material-check>
       </li>
     </ul>
   </div>

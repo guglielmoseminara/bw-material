@@ -7,8 +7,8 @@ export default {
   },
   props: {
     value: {
-      type: [String, Object],
-      default: undefined,
+      type: Array,
+      default: [],
     },
     disabled: {
       type: Boolean,
@@ -30,6 +30,7 @@ export default {
       type: String,
       default: "contain" // contain - outline
     },
+
     options: {
       type: Array,
       default: () => []
@@ -43,12 +44,18 @@ export default {
        * for ex: 'code' or the default 'id' 
       **/
       type: Object,
-      default: () => { return {nameField: 'name', codeField: 'id'}} 
+      default: () => { return {nameField: 'name', codeField: 'code'}} 
     },
   },
   data () {
     return {
       mdcSelect: undefined,
+
+      // used internally cause we can have codeField config 
+      // and value can't display the name field
+      internalValue: [],
+
+      internalOptions: []  
     }
   },
   computed: {
@@ -64,10 +71,14 @@ export default {
       }
       return classes;
     },
+    getFormattedValue() {
+      return this.internalValue.map(ele => {return ele[this.configOptions.nameField]}).join(', ')
+    }
   },
   mounted () {
+    // clone to avoid ref problem with other select which have the same options ref
+    this.internalOptions = this.options.map(a => ({...a}));
     this.instantiate();
-    
   },
   beforeDestroy () {
     this.mdcSelect.destroy()
@@ -80,27 +91,46 @@ export default {
       this.mdcSelect.disabled = this.disabled;
       this.mdcSelect.required = this.required;
     },
-    selectClicked(obj) {
+    selectClicked(obj, index) {
+      let tempArr = [];
+      this.internalValue = this.internalOptions.filter((ele, i) => {
+        if (utils.isDefined(ele.checked) && ele.checked) {
+          tempArr.push(this.options[i]);
+        }
+        return (utils.isDefined(ele.checked) && ele.checked);
+      });
       this.$emit('input', utils.isDefined(this.configOptions.valueField) ? 
-      obj[this.configOptions.valueField] : obj);
+        tempArr.map(ele => {return ele[this.configOptions.valueField] }): tempArr);
+  
     },
-    isOptionSelected(option) {
+    isOptionSelected() {
+      return this.value.length > 0;
+    },
+    getValue(ele) {
       if(utils.isDefined(this.configOptions.valueField)) {
-        return option[this.configOptions.valueField] == this.value;
+        return ele[this.configOptions.codeField];
       } else {
-        return option[this.configOptions.codeField] == this.value[this.configOptions.codeField];
+        return ele;
       }
-    }
+    },
+    getCode(ele) {
+        return ele[this.configOptions.codeField];
+    },
   },
   watch: {
     required (val) {
       this.mdcSelect.required = val;
     },
     value() {
-      this.mdcSelect.value = this.value[this.configOptions.codeField];
+      let foundation = this.mdcSelect.getDefaultFoundation();
+      let foundationAdapter = foundation.adapter_;
+      foundationAdapter.setSelectedText(this.getFormattedValue);
     },
     disabled (val) {
       this.mdcSelect.disabled = val;
+    },
+    options() {
+      this.internalOptions = JSON.parse(JSON.stringify(this.options));
     }
   },
 }
