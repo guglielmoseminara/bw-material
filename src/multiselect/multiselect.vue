@@ -16,7 +16,9 @@
     </div>
     <span class="mdc-notched-outline">
       <span class="mdc-notched-outline__leading"></span>
-      <span class="mdc-notched-outline__notch">
+      <span class="mdc-notched-outline__notch"
+      :class="{'bw-remove-border-top' : isOptionSelected()}"
+      >
         <span id="outlined-select-label" class="mdc-floating-label">{{label}}</span>
       </span>
       <span class="mdc-notched-outline__trailing"></span>
@@ -25,12 +27,14 @@
   </div>
 
   <div class="mdc-select__menu mdc-menu mdc-menu-surface">
-    <ul class="mdc-list">  
-      <li class="mdc-list-item d-none" 
+    <ul class="mdc-list">
+      <!--fake li for floating label-->
+      <li class="mdc-list-item d-none"
         :class="{'mdc-list-item--selected' : isOptionSelected()}"
         :data-value="getFormattedValue" 
         :aria-selected="isOptionSelected()"
       ></li>
+
       <li class="bw-menu-item" 
         v-for="(option, index) in internalOptions"
         :key="index" 

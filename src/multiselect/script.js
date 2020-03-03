@@ -50,7 +50,7 @@ export default {
   data () {
     return {
       mdcSelect: undefined,
-
+      foundationAdapter: undefined,
       // used internally cause we can have codeField config 
       // and value can't display the name field
       internalValue: [],
@@ -72,13 +72,19 @@ export default {
       return classes;
     },
     getFormattedValue() {
-      return this.internalValue.map(ele => {return ele[this.configOptions.nameField]}).join(', ')
+      return this.internalValue.map(ele => 
+        {return ele[this.configOptions.nameField]}
+      ).join(', ')
     }
   },
   mounted () {
     // clone to avoid ref problem with other select which have the same options ref
     this.internalOptions = this.options.map(a => ({...a}));
     this.instantiate();
+    
+    this.initChecked();
+    
+    
   },
   beforeDestroy () {
     this.mdcSelect.destroy()
@@ -86,10 +92,28 @@ export default {
   methods: {
     onSelect(ev) {
     },
+    initChecked() {
+      this.internalOptions.forEach((option, j) => {
+        if (utils.isDefined(this.configOptions.valueField)) {
+          if(this.value.indexOf(this.getCode(option)) !==-1 ) {
+            option['checked'] = true;
+          }
+        } else {
+          if (this.value.map(ele => {return this.getCode(ele)})
+            .indexOf(this.getCode(option)) !==-1 
+          ) {
+            option['checked'] = true;
+          }
+        }
+      });
+      this.selectClicked();
+      this.foundationAdapter.floatLabel(true);
+    },
     instantiate() {
       this.mdcSelect = MDCSelect.attachTo(this.$el);
       this.mdcSelect.disabled = this.disabled;
       this.mdcSelect.required = this.required;
+      this.foundationAdapter = this.mdcSelect.getDefaultFoundation().adapter_;
     },
     selectClicked(obj, index) {
       let tempArr = [];
@@ -121,10 +145,11 @@ export default {
     required (val) {
       this.mdcSelect.required = val;
     },
-    value() {
-      let foundation = this.mdcSelect.getDefaultFoundation();
-      let foundationAdapter = foundation.adapter_;
-      foundationAdapter.setSelectedText(this.getFormattedValue);
+    value: {
+      handler: function (val, oldVal) { 
+        this.foundationAdapter.setSelectedText(this.getFormattedValue);
+      },
+      deep: true,
     },
     disabled (val) {
       this.mdcSelect.disabled = val;

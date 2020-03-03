@@ -5,8 +5,8 @@ export default {
   data() {
     return {
       textFieldModel: 'example',
-      multiselectModel: [],
-      multiselectModel2: [],
+      multiselectModel: [ "a10", "a30" ],
+      multiselectModel2: [{"name": "prova 20", code: "20", id: 'a20'}, ],
 
 
       selectModel: 'a20',
