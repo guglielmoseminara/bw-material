@@ -1,6 +1,6 @@
 {
   "name": "bw-material",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "private": false,
   "description": "",
   "author": "",
@@ -38,11 +38,11 @@
     "@material/theme": "^4.0.0",
     "@material/top-app-bar": "^4.0.0",
     "@material/typography": "^4.0.0",
-    "bootstrap": "^4.4.1",
     "material-design-icons": "^3.0.1",
     "range-slider-vue": "^1.0.3"
   },
   "devDependencies": {
+    "bootstrap": "^4.4.1",
     "vue-router": "^3.1.5",
     "@vue/cli": "^4.2.2",
     "@vue/cli-plugin-router": "^4.2.2",

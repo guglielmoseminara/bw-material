@@ -29,7 +29,7 @@
   <div class="mdc-select__menu mdc-menu mdc-menu-surface">
     <ul class="mdc-list">
       <!--fake li for floating label-->
-      <li class="mdc-list-item d-none"
+      <li class="mdc-list-item hidden"
         :class="{'mdc-list-item--selected' : isOptionSelected()}"
         :data-value="getFormattedValue" 
         :aria-selected="isOptionSelected()"

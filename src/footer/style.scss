@@ -75,6 +75,7 @@ $footer-cta-padding: 10px 0;
         &:hover {
             background: var(--footer-text-hover-color);
             background-clip: text;
+            -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
     }
