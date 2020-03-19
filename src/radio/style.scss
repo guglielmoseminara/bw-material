@@ -35,7 +35,7 @@ $radio-fill-color) {
 
 .color-secondary {
     .mdc-radio {
-        $ripple-color: var(--radio-border-color);
+        $ripple-color: var(--radio-border-color-secondary);
         @include bw-radio-color($ripple-color, var(--radio-border-color-unchek-secondary), 
         var(--radio-border-color-chek-secondary), var(--radio-fill-color-secondary));  
     }
