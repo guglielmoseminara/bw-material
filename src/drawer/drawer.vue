@@ -6,7 +6,7 @@
     @MDCDrawer:opened="onOpened"
   >
     <div
-      v-if="$slots.header"
+      v-if="isNotEmptySlot('header')"
       class="mdc-drawer__header"
     >
       <slot name="header" />

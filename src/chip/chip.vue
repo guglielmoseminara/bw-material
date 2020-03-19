@@ -9,7 +9,7 @@
   >
     <div class="mdc-chip__ripple" ref="chipRipple"></div>
     <slot
-      v-if="$slots['leadingIcon']"
+      v-if="isNotEmptySlot('leadingIcon')"
       name="leadingIcon"
     />
     <div
@@ -32,7 +32,7 @@
       <slot />
     </div>
     <slot
-      v-if="$slots['trailingIcon']"
+      v-if="isNotEmptySlot('trailingIcon')"
       name="trailingIcon"
     />
   </div>

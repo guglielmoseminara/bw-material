@@ -32,14 +32,14 @@
     >
       <div class="mdc-notched-outline__leading" />
       <div
-        v-if="$slots.default"
+        v-if="isNotEmptySlot('default')"
         class="mdc-notched-outline__notch"
       >
         <slot />
       </div>
       <div class="mdc-notched-outline__trailing" />
     </div>
-    <slot v-if="$slots.default && !textarea && !outlined" />
+    <slot v-if="isNotEmptySlot('default') && !textarea && !outlined" />
     <slot name="trailingIcon" />
     <slot
       v-if="!outlined"

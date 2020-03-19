@@ -1,11 +1,11 @@
 <template>
 <footer class="bw-footer">
     <div :class="{'container': haveContainer}">
-        <div v-if="$slots['topStart'] || $slots['topEnd']" class="bw-footer-container--top">
-            <div v-if="$slots['topStart']" class="footer-top-start">
+        <div v-if="isNotEmptySlot('topStart') || isNotEmptySlot('topEnd')" class="bw-footer-container--top">
+            <div v-if="isNotEmptySlot('topStart')" class="footer-top-start">
                 <slot name="topStart"/>
             </div>
-            <template v-if="linkGroups && (!$slots['middleStart'] && !$slots['middleEnd'])">
+            <template v-if="linkGroups && (!isNotEmptySlot('middleStart') && !isNotEmptySlot('middleEnd'))">
                 <div v-for="(group, i) in linkGroups" :key="i" class="footer-link-container"
                     :class="group.classList"
                 >
@@ -27,19 +27,19 @@
                 <slot name="topCenter"/>
             </div>
 
-            <div v-if="$slots['topEnd']" class="footer-top-end">
+            <div v-if="isNotEmptySlot('topEnd')" class="footer-top-end">
                 <slot name="topEnd"/>
             </div>
         </div>
         
         
-        <div v-if="$slots['middleStart'] || $slots['middleEnd'] || $slots['middleCenter']" 
+        <div v-if="isNotEmptySlot('middleStart') || isNotEmptySlot('middleEnd') || isNotEmptySlot('middleCenter')" 
             class="bw-footer-container--middle"
         >
-            <div v-if="$slots['middleStart']" class="footer-middle-start">
+            <div v-if="isNotEmptySlot('middleStart')" class="footer-middle-start">
                 <slot name="middleStart"/>
             </div>
-            <template v-if="linkGroups && !$slots['middleCenter']">
+            <template v-if="linkGroups && !isNotEmptySlot('middleCenter')">
                 <div v-for="(group, i) in linkGroups" :key="i" class="footer-link-container"
                     :class="group.classList"
                 >
@@ -58,17 +58,17 @@
                 </div>
             </template>
             <template v-else>
-                <div v-if="$slots['middleCenter']" class="footer-middle-center">
+                <div v-if="isNotEmptySlot('middleCenter')" class="footer-middle-center">
                     <slot name="middleCenter"/>
                 </div>
             </template>
 
-            <div v-if="$slots['middleEnd']" class="footer-middle-end">
+            <div v-if="isNotEmptySlot('middleEnd')" class="footer-middle-end">
                 <slot name="middleEnd"/>
             </div>
         </div>
 
-        <hr v-if="bottomLinksGroups || $slots['bottomSlot']" class="mdc-list-divider">
+        <hr v-if="bottomLinksGroups || isNotEmptySlot('bottomSlot')" class="mdc-list-divider">
         
         <div v-if="bottomLinksGroups" class="bw-footer-container--bottom">
             <div v-for="(group, i) in bottomLinksGroups" :key="i" 

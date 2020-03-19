@@ -24,7 +24,7 @@
                     </template>
                     <template slot="drawerHeaderSlot">
                         Drawer header slot
-                        </template>
+                    </template>
                     <template slot="endSlot">
                         <button class="mdc-icon-button material-icons mdc-top-app-bar__action-item--unbounded" aria-label="Print this page">print</button>
                         <button class="mdc-icon-button material-icons mdc-top-app-bar__action-item--unbounded" aria-label="Bookmark this page">bookmark</button>  
@@ -78,6 +78,12 @@
                         {name: 'Terms of Service', href: '#'},
                         {name: 'Legal', href: '#'},
                     ]
+                },                {
+                classList: ['group-1'],
+                    links: [
+                        {name: 'Terms of Service', href: '#'},
+                        {name: 'Legal', href: '#'},
+                    ]
                 }
             ]"
         >
@@ -99,9 +105,9 @@
             </div>
         </div>
         
-        <div slot="middleEnd">
-            CUSTOM MIDDLE END SLOT
-        </div>
+        <template slot="middleEnd">
+          CUSTOM MIDDLE END SLOT
+        </template>
         
     </bw-material-footer>
     </div>

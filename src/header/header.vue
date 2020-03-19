@@ -1,7 +1,7 @@
 <template>
 <header class="mdc-top-app-bar" :class="classes">
     <bw-material-drawer dismissible ref="drawer" :nav-links-groups="navLinksGroups">
-        <div slot="header">
+        <div slot="header" v-if="isNotEmptySlot('drawerHeaderSlot')">
              <slot name="drawerHeaderSlot" />
         </div>
         <slot name="drawerSlot" />

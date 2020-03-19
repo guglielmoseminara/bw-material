@@ -13,25 +13,25 @@
     </div>
     <slot v-else :class="{'horizontal-container' : type==='horizontal'}" />
     <div
-      v-if="$slots['actionButtons'] || $slots['actionIcons'] || $slots['fullBleedButton'] || $slots['actions']"
+      v-if="isNotEmptySlot('actionButtons') || isNotEmptySlot('actionIcons') || isNotEmptySlot('fullBleedButton') || isNotEmptySlot('actions')"
       :class="actionClasses"
       class="mdc-card__actions"
     >
       <slot
-        v-if="fullBleedAction && $slots['fullBleedButton']"
+        v-if="fullBleedAction && isNotEmptySlot('fullBleedButton')"
         name="fullBleedButton"
       />
       <slot
         name="actions"
       />
       <div
-        v-if="!fullBleedAction && $slots['actionButtons']"
+        v-if="!fullBleedAction && isNotEmptySlot('actionButtons')"
         class="mdc-card__action-buttons"
       >
         <slot name="actionButtons" />
       </div>
       <div
-        v-if="!fullBleedAction && $slots['actionIcons']"
+        v-if="!fullBleedAction && isNotEmptySlot('actionIcons')"
         class="mdc-card__action-icons"
       >
         <slot name="actionIcons" />

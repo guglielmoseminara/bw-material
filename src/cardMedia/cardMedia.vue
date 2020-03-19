@@ -4,7 +4,7 @@
     class="mdc-card__media"
   >
     <div
-      v-if="$slots['default']"
+      v-if="isNotEmptySlot('default')"
       class="mdc-card__media-content"
     >
       <slot />
