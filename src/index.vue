@@ -34,6 +34,75 @@
             <div ref="mainContent">
                 <router-view />
             </div>
+            
+            <bw-material-footer 
+            :link-groups="[
+                {
+                    classList: ['group-0'],
+                    links: [
+                        {name: 'item 0', href: '#'},
+                        {name: 'item 1', href: '#'},
+                        {name: 'item 2', href: '#'},
+                        {name: 'item 3', href: '#'},
+                    ]
+                },
+                {
+                    classList: ['group-1'],
+                    links: [
+                        {name: 'item 4', href: '#'},
+                        {name: 'item 5', href: '#'},
+                        {name: 'item 6', href: '#'},
+                    ]
+                },
+                {
+                    classList: ['group-2 '],
+                    links: [
+                        {name: 'item 7', href: '#'},
+                        {name: 'item 8', href: '#'},
+                        {name: 'item 9', href: '#'},
+                        {name: 'item 10', href: '#'},
+                        {name: 'item 11', href: '#'},
+                        {name: 'item 12', href: '#'},
+                    ]
+                },
+            ]"
+            :bottom-links-groups="[
+                {
+                    classList: ['group-0'],
+                    links: [{name: '© BrandName. All rights reserved.'}]
+                },
+                {
+                    classList: ['group-1'],
+                    links: [{name: 'Privacy Policy', href: '#'},
+                        {name: 'Terms of Service', href: '#'},
+                        {name: 'Legal', href: '#'},
+                    ]
+                }
+            ]"
+        >
+
+        <div slot="topStart">
+            logo here
+        </div>
+        
+        <div slot="middleStart">
+            CUSTOM MIDDLE START SLOT<br>
+            <bw-material-text-field outlined id="my-text-field1" color="primary" placeholder="E-mail">
+                <bw-material-floating-label for="my-text-field1">Subscription</bw-material-floating-label>
+                <bw-material-line-ripple slot="bottomLine"/>
+            </bw-material-text-field>
+            <div>
+                
+                <bw-material-button label="SUBSCRIBE" class="mt-3"
+                ></bw-material-button>
+            </div>
+        </div>
+        
+        <div slot="middleEnd">
+            CUSTOM MIDDLE END SLOT
+        </div>
+        
+    </bw-material-footer>
     </div>
 </template>
 
