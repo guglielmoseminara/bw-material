@@ -1,6 +1,6 @@
 {
   "name": "bw-material",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "private": false,
   "description": "",
   "author": "",
@@ -10,7 +10,7 @@
     "build2": "vue build src/BwMaterialButton.vue",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "main": "index.js",
+  "main": "./dist/index.js",
   "files": [
     "dist/*"
   ],

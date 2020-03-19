@@ -45,18 +45,6 @@ if (process.env.NODE_ENV == 'development') {
     });
 }
 
-Vue.mixin({
-  methods: {
-    isNotEmptySlot(slotName) {
-        return (
-            this.$slots[slotName] && 
-            this.$slots[slotName][0] && 
-            (this.$slots[slotName][0].children || this.$slots[slotName][0].text)
-        );
-    }
-  }
-})
-
 export default {
     install(Vue, options) {
         Vue.component("bw-material-button", BwMaterialButton);      
@@ -84,7 +72,17 @@ export default {
         Vue.component("bw-material-select", BwMaterialSelect);
         Vue.component("bw-material-multiselect", BwMaterialMultiselect);
 
-
+        Vue.mixin({
+        methods: {
+            isNotEmptySlot(slotName) {
+                return (
+                    this.$slots[slotName] && 
+                    this.$slots[slotName][0] && 
+                    (this.$slots[slotName][0].children || this.$slots[slotName][0].text)
+                );
+            }
+        }
+        });
 
         // DIRECTIVE
         Vue.directive('elevation', {
