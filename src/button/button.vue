@@ -10,7 +10,12 @@
     >
       {{icon.name}}
     </span>
-    <span v-if="label" class="mdc-button__label">{{ label }}</span>
+    
+    <span v-if="label && !isNotEmptySlot($slots['default'])"
+      class="mdc-button__label"
+    >{{ label }}</span>
+    <slot v-else />
+
     <span v-if="icon && subtype=='default' && icon.position === 'r'" 
       class="material-icons mdc-button__icon" 
       aria-hidden="true"

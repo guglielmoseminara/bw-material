@@ -3,6 +3,13 @@
   <h3 class="col-12 my-5">BUTTON</h3>
       <div class="col-6">
         <div>
+          <bw-material-button v-on:click-btn="exampleClickBtn"
+              class="mb-4" type="contain"  color="secondary"
+              size="small"
+          >
+            <div>custom slot</div>
+          </bw-material-button> 
+          <br>
           type:contain <br>
           <bw-material-button v-on:click-btn="exampleClickBtn"
               label="my label" class="mb-4" type="contain" color="secondary"
