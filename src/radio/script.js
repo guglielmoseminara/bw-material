@@ -58,6 +58,7 @@ export default {
           return this.modelValue === this.value;
       },
       classes() {
+        let classes = {};
         if(utils.isDefined(this.color)) {
         classes['color-'+this.color] = true;
         }
