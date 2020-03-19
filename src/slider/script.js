@@ -49,10 +49,14 @@ export default {
   },
   computed: {
     classes () {
-      return {
+      let classes = {
         'mdc-slider--discrete': this.discrete,
         'mdc-slider--display-markers': this.displayMarkers
       }
+      if(utils.isDefined(this.color)) {
+        classes['color-'+this.color] = true;
+      }
+      return classes;
     }
   },
   watch: {
@@ -80,9 +84,6 @@ export default {
     this.mdcSlider.max = this.max;
     this.mdcSlider.step = this.step;
     this.mdcSlider.disabled = this.disabled;
-    if(utils.isDefined(this.color)) {
-        this.classes['color-'+this.color] = true;
-    }
   },
   beforeDestroy () {
     this.mdcSlider.destroy()

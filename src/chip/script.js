@@ -25,7 +25,7 @@ export default {
     }
   },
   computed: {
-    classes () {
+    classes() {
 
       let classes = {
         'mdc-chip--selected': this.value

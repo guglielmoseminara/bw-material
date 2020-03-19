@@ -55,10 +55,6 @@ export default {
   mounted () {
     // this.$refs.sliderThumb.$el.querySelector(".vue-slider-dot-handle").setAttribute('tabindex', '0');
     const sliderRipple = new MDCRipple(this.$refs.slider);
-    if(utils.isDefined(this.color)) {
-        this.classes['color-'+this.color] = true;
-    }
-
     // let target = this.$refs.sliderThumb.$el.querySelector('.track-ball-left');
     // this.tooltipLeftNode = utils.createAndAppendNode(target, 'div', {}, ['knobs-tooltip']);
     // this.tooltipLeftNode.innerText = this.value[0];

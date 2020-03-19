@@ -1,7 +1,7 @@
 <template>
   <button @click.prevent="emitClick"
     v-bind="$attrs"
-    :class="classList.join(' ')" ref="bwButton" :disabled="disabled"
+    :class="classes" ref="bwButton" :disabled="disabled"
   >
     <div :class="[subtype==='default' ? 'mdc-button__ripple' : 'mdc-fab__ripple']"></div>
     <span v-if="icon && subtype=='default' && icon.position === 'l'"

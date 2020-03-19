@@ -9,7 +9,6 @@ export default {
   },
   data() {
     return {
-      classList: []
     }
   },
   props: {
@@ -57,6 +56,12 @@ export default {
               return this.checked;
           }
           return this.modelValue === this.value;
+      },
+      classes() {
+        if(utils.isDefined(this.color)) {
+        classes['color-'+this.color] = true;
+        }
+        return classes;
       }
   },
   methods: {
@@ -81,8 +86,5 @@ export default {
       const radio = new MDCRadio(this.$refs.mdcRadio);
       const formField = new MDCFormField(this.$refs.mdcFormField);
       formField.input = radio;
-      if(utils.isDefined(this.color)) {
-        this.classList.push('color-'+this.color);
-      }
   },
 }

@@ -1,4 +1,6 @@
 import { MDCRipple } from '@material/ripple';
+import utils from "../utils/utils";
+
     export default {
     props: {
         type: {
@@ -26,7 +28,7 @@ import { MDCRipple } from '@material/ripple';
             type: Object,
             // default: function (){
             //   return {
-            //     position: 'l',
+            //     position: 'l', // accepted only 'l' or 'r' param
             //     name: 'add'
             //   }
             // }
@@ -55,33 +57,34 @@ import { MDCRipple } from '@material/ripple';
     },
     data() {
         return {
-            classList: []
+        }
+    },
+    computed: {
+        classes() {
+    
+          let classes = {
+              'shadow-default': this.haveShadow,
+          };
+          if(utils.isDefined(this.color)) {
+            classes['color-'+this.color] = true;
+          }
+          if(utils.isDefined(this.size)) {
+            classes['size-'+this.size] = true;
+          }
+          if(this.rounded && this.subtype!=='fab') {
+            classes['round-'+this.rounded] = true;
+          }
+          classes[this.type] = true;
+          let baseClass = this.subtype == 'fab' ? 'mdc-fab': 'mdc-button';
+          classes[baseClass] = true;
+
+          return classes;
         }
     },
     mounted() {
         new MDCRipple(this.$refs.bwButton);
-        let baseClass = this.subtype == 'fab' ? 'mdc-fab': 'mdc-button';
-        this.classList.push(baseClass);
-        this.classList.push(this.type);
-
-        if(this.rounded && this.subtype!=='fab') {
-            this.classList.push('round-'+this.rounded);
-        }
-
-        if(this.color) {
-            this.classList.push('color-'+this.color);
-        }
-
-        if(this.size) {
-            this.classList.push('size-'+this.size);
-        }
-
         if(this.icon && !this.icon.position) {
             this.icon.position = 'l';
-        }
-
-        if(this.haveShadow) {
-            this.classList.push('shadow-default');
         }
     },
     methods: {

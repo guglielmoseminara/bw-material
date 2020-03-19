@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="mdc-form-field" ref="mdcFormField" 
-        :class="classList"
+        :class="classes"
     >
         <div class="mdc-radio" ref="mdcRadio">
             <input type="radio"

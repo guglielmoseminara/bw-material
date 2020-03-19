@@ -1,11 +1,9 @@
 import {MDCSwitch} from '@material/switch';
-
 import utils from "../utils/utils";
 
 export default {
     data() {
         return {
-            classList: []
         }
     },
     props: {
@@ -32,12 +30,6 @@ export default {
     mounted () {
         this.$emit('input', this.value);
         const checkbox = new MDCSwitch(this.$refs.mdcSwitch);
-        if(utils.isDefined(this.color)) {
-            this.classList.push('color-'+this.color);
-        }
-        if(this.disabled) {
-            this.classList.push('mdc-switch--disabled');
-        }
     },
     methods: {
         trigger (e) {
@@ -45,5 +37,14 @@ export default {
         }
     },
     computed: {
+        classes() {
+            let classes = {
+              'mdc-switch--disabled': this.disabled
+            }
+            if(utils.isDefined(this.color)) {
+              classes['color-'+this.color] = true;
+            }
+            return classes;
+          }
     },
 }

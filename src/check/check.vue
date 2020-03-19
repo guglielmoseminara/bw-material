@@ -1,6 +1,6 @@
 <template>
     <div class="mdc-form-field" ref="mdcFormField" 
-        :class="classList"
+        :class="classes"
     >
         <div class="mdc-checkbox" ref="mdcCheck">
             <input type="checkbox"

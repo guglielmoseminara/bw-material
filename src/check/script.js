@@ -9,7 +9,6 @@ export default {
     },
     data() {
         return {
-          classList: []
         }
     },
     props: {
@@ -61,7 +60,16 @@ export default {
                     .indexOf(JSON.stringify(this.value)) > -1;
             }
             return !!this.modelValue;
+        },
+        classes() {
+            let classes = {};
+            if(utils.isDefined(this.color)) {
+            classes['color-'+this.color] = true;
+            }
+
+            return classes;
         }
+        
     },
     methods: {
         onChange() {
@@ -96,8 +104,5 @@ export default {
         const checkbox = new MDCCheckbox(this.$refs.mdcCheck);
         const formField = new MDCFormField(this.$refs.mdcFormField);
         formField.input = checkbox;
-        if(utils.isDefined(this.color)) {
-            this.classList.push('color-'+this.color);
-          }
     },
 };
