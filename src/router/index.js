@@ -7,6 +7,8 @@ import Chips from '../views/demo/chips/component.vue';
 import Control from '../views/demo/control/component.vue';
 import Text from '../views/demo/text/component.vue';
 import Headers from '../views/demo/headers/component.vue';
+import Menu from '../views/demo/menu/component.vue';
+
 
 Vue.use(VueRouter)
 
@@ -45,6 +47,11 @@ const routes = [
     path: '/text',
     name: 'text',
     component: Text
+  },
+  {
+    path: '/menu',
+    name: 'menu',
+    component: Menu
   }
 ]
 
