@@ -1,7 +1,7 @@
 <template>
-  <div class="bw-list-item-label" v-if="!item.children">
+  <span class="bw-list-item-label" v-if="!item.children">
     {{ item.name }}
-  </div>
+  </span>
 
   <bw-material-dropdown-menu v-else-if="internalListType === 'dropdown'"
     :label="item.name" 

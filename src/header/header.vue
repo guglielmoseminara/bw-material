@@ -24,8 +24,9 @@
         </section>
         <section v-else class="mdc-top-app-bar__section mdc-top-app-bar__section--align-center">
             <template v-for="(group, i) in navLinksGroups">
-                <span v-for="(link, index) in group" class="mdc-top-app-bar__title" :key="index+'a'+i">
-                    <a :href="link.href">{{ link.name }}</a>
+                <span v-for="(link, index) in group" :key="'a'+index+i"  class="mdc-top-app-bar__title" :class="[link.children ? 'have-children' : '']">
+                    <bw-material-abstract-list-item :item="link">
+                    </bw-material-abstract-list-item>
                 </span>
             </template>
         </section>

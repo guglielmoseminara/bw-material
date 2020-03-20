@@ -14,11 +14,13 @@
         display: inline-flex;
         cursor: pointer;
         margin-bottom: 0;
-        padding: 10px 26px;
     }
 
-    .bw-list-item-label {
+    span.bw-list-item-label {
         padding: 10px 26px;
+
+        // TODO: found a better solution incompatible for old browser
+        display: contents;
     }
 
     .mdc-menu {
@@ -27,6 +29,7 @@
     }
     
     .bw-list-item {
+        padding: 10px 26px;
         overflow: inherit;
         color: var(--dropdown-text-color);
         cursor: pointer;
