@@ -1,1 +1,29 @@
 @import "@material/list/mdc-list";
+
+.mdc-list-item__meta {
+    display: inline-flex;
+}
+
+
+:root {
+    --list-icon-color: #808080;
+    --list-text-color: #808080;
+    --list-bg-color: var(--mdc-theme--primary-bg);
+    --list-active-icon-color: var(--mdc-theme-primary);
+    --list-active-text-color: var(--mdc-theme-primary);
+}
+
+.mdc-list .mdc-list-item {
+    color: var(--list-text-color);
+    .mdc-list-item__graphic {
+        color: var(--list-icon-color);
+    }
+    &.mdc-list-item--activated {
+        color: var(--list-active-text-color);
+        .mdc-list-item__graphic {
+            color: var(--list-active-icon-color);
+        }
+    }
+}
+
+

@@ -6,7 +6,8 @@
                     :nav-links-groups="[
                     [
                         {name: 'button doc', href: 'button'},
-                        {name: 'menu doc', href: 'menu'}, 
+                        {name: 'menu doc', href: 'menu'},
+                        {name: 'list doc', href: 'list'},
                         {name: 'card doc', icon: 'featured_video', href: 'card'}, 
                         {name: 'chips doc', href: 'chips'}
                     ],

@@ -43,7 +43,9 @@
     v-bind="$attrs"
     v-on="$listeners"
   >
-    <slot name="graphic" />
+    <span class="mdc-list-item__graphic">
+      <slot name="graphic" />
+    </span>
     <slot />
     <span
       v-if="$slots['text'] || $slots['primaryText'] || $slots['secondaryText']"
@@ -63,7 +65,9 @@
         <slot name="secondaryText" />
       </span>
     </span>
-    <slot name="meta" />
+    <span class="mdc-list-item__meta">
+      <slot name="meta" />
+    </span>
   </li>
 </template>
 
