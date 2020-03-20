@@ -1,5 +1,5 @@
 <template>
-  <button @click.prevent="emitClick"
+  <button @click.prevent="emitClick($event)"
     v-bind="$attrs"
     :class="classes" ref="bwButton" :disabled="disabled"
   >

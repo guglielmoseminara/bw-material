@@ -27,7 +27,8 @@ import BwMaterialMenuAnchor from "./menuAnchor/menuAnchor.vue";
 import BwMaterialMenuSurface from "./menuSurface/menuSurface.vue";
 import BwMaterialList from "./list/list.vue";
 import BwMaterialListItem from "./listItem/listItem.vue";
-
+import BwMaterialDropdownMenu from "./dropdownMenu/dropdownMenu.vue";
+import BwMaterialAbstractListItem from "./abstractListItem/abstractListItem.vue"
 
 
 import Vue from 'vue';
@@ -79,9 +80,8 @@ export default {
         Vue.component("bw-material-menu-surface", BwMaterialMenuSurface);
         Vue.component("bw-material-list", BwMaterialList);
         Vue.component("bw-material-list-item", BwMaterialListItem);
-        
-
-
+        Vue.component("bw-material-dropdown-menu", BwMaterialDropdownMenu);
+        Vue.component("bw-material-abstract-list-item", BwMaterialAbstractListItem);
 
         Vue.mixin({
         methods: {

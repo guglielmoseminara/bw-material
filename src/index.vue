@@ -5,7 +5,9 @@
                     :fixed="true" :scroll-target="$refs.mainContent" 
                     :nav-links-groups="[
                     [
-                        {name: 'button doc', href: 'button'},
+                        {name: 'button doc', href: 'button',
+                        
+                        },
                         {name: 'menu doc', href: 'menu'},
                         {name: 'list doc', href: 'list'},
                         {name: 'card doc', icon: 'featured_video', href: 'card'}, 

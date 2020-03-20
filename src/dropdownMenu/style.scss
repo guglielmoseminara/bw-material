@@ -1,0 +1,37 @@
+:root {
+    --dropdown-text-color: #808080;
+    --dropdown-active-text-color: var(--mdc-theme-primary);
+}
+
+.bw-dropdown-menu {
+
+    a.router-link {
+        text-decoration: none;
+    }
+
+    color: var(--dropdown-text-color);
+    .bw-label {
+        display: inline-flex;
+        cursor: pointer;
+        margin-bottom: 0;
+        padding: 10px 26px;
+    }
+
+    .bw-list-item-label {
+        padding: 10px 26px;
+    }
+
+    .mdc-menu {
+        overflow: inherit;
+        width: max-content;
+    }
+    
+    .bw-list-item {
+        overflow: inherit;
+        color: var(--dropdown-text-color);
+        cursor: pointer;
+        &:hover {
+            background: rgb(236, 236, 236);
+        }
+    }
+}

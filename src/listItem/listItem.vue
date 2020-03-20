@@ -8,31 +8,30 @@
     v-bind="$attrs"
     v-on="$listeners"
   >
-    <slot
-      v-if="$slots['graphic']"
-      name="graphic"
-    />
+    <span class="mdc-list-item__graphic" v-if="isNotEmptySlot('graphic')">
+      <slot name="graphic" />
+    </span>
     <slot />
     <span
-      v-if="$slots['text'] || $slots['primaryText'] || $slots['secondaryText']"
+      v-if="isNotEmptySlot('text') || isNotEmptySlot('primaryText') || isNotEmptySlot('secondaryText')"
       class="mdc-list-item__text"
     >
       <slot name="text" />
       <span
-        v-if="$slots['primaryText']"
+        v-if="isNotEmptySlot('primaryText')"
         class="mdc-list-item__primary-text"
       >
         <slot name="primaryText" />
       </span>
       <span
-        v-if="$slots['secondaryText']"
+        v-if="isNotEmptySlot('secondaryText')"
         class="mdc-list-item__secondary-text"
       >
         <slot name="secondaryText" />
       </span>
     </span>
     <slot
-      v-if="$slots['meta']"
+      v-if="isNotEmptySlot('meta')"
       name="meta"
     />
   </a>
@@ -43,29 +42,29 @@
     v-bind="$attrs"
     v-on="$listeners"
   >
-    <span class="mdc-list-item__graphic">
+    <span class="mdc-list-item__graphic" v-if="isNotEmptySlot('graphic')">
       <slot name="graphic" />
     </span>
     <slot />
     <span
-      v-if="$slots['text'] || $slots['primaryText'] || $slots['secondaryText']"
+      v-if="isNotEmptySlot('text') || isNotEmptySlot('primaryText') || isNotEmptySlot('secondaryText')"
       class="mdc-list-item__text"
     >
       <slot name="text" />
       <span
-        v-if="$slots['primaryText']"
+        v-if="isNotEmptySlot('primaryText')"
         class="mdc-list-item__primary-text"
       >
         <slot name="primaryText" />
       </span>
       <span
-        v-if="$slots['secondaryText']"
+        v-if="isNotEmptySlot('secondaryText')"
         class="mdc-list-item__secondary-text"
       >
         <slot name="secondaryText" />
       </span>
     </span>
-    <span class="mdc-list-item__meta">
+    <span class="mdc-list-item__meta" v-if="isNotEmptySlot('meta')">
       <slot name="meta" />
     </span>
   </li>

@@ -88,8 +88,8 @@ import utils from "../utils/utils";
         }
     },
     methods: {
-        emitClick() {
-            this.$emit('click-btn');
+        emitClick(ev) {
+            this.$emit('click-btn', ev);
             if(this.clickEventName) {
                 this.$eventHub.$emit(this.clickEventName, this.clickEventParams);
             }
