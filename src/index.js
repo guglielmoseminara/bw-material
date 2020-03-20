@@ -1,7 +1,3 @@
-
-
-
-
 import BwMaterialButton from "./button/button.vue";
 import BwMaterialChip from "./chip/chip.vue";
 import BwMaterialHeader from "./header/header.vue";
@@ -26,6 +22,8 @@ import BwMaterialLineRipple from "./lineRipple/lineRipple.vue";
 import BwMaterialTextField from "./textField/textField.vue";
 import BwMaterialSelect from "./select/select.vue";
 import BwMaterialMultiselect from "./multiselect/multiselect.vue";
+import BwMaterialList from "./list/list.vue";
+import BwMaterialListItem from "./listItem/listItem.vue";
 
 import Vue from 'vue';
 // import routes from './router/index';
@@ -71,6 +69,8 @@ export default {
         Vue.component("bw-material-text-field", BwMaterialTextField);
         Vue.component("bw-material-select", BwMaterialSelect);
         Vue.component("bw-material-multiselect", BwMaterialMultiselect);
+        Vue.component("bw-material-list", BwMaterialList);
+        Vue.component("bw-material-list-item", BwMaterialListItem);
 
         Vue.mixin({
         methods: {
