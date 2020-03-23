@@ -3,7 +3,10 @@ export default {
 
   },
   data() {
-    return {
+    return {      
+      date: new Date(),
+      dateRange: { "start": new Date(), "end": new Date('01-01-2022') },
+
       textFieldModel: 'example',
       multiselectModel: [ "a10", "a30" ],
       multiselectModel2: [{"name": "prova 20", code: "20", id: 'a20'}, ],
@@ -27,5 +30,11 @@ export default {
   },
   methods: {
   
-  }
+  },
+  computed: {
+    errorMessage() {
+      if (!this.date) return 'Date is required.';
+      return '';
+    },
+  },
 }

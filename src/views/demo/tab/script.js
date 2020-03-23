@@ -11,6 +11,8 @@
   
   },
   methods: {
-
+    tabActivated(e) {
+      console.log(e);
+    }
   }
 }

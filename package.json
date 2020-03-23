@@ -1,6 +1,6 @@
 {
   "name": "bw-material",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "private": false,
   "description": "",
   "author": "",
@@ -20,6 +20,7 @@
     "@material/card": "^4.0.0",
     "@material/checkbox": "^4.0.0",
     "@material/chips": "^4.0.0",
+    "@material/dialog": "^4.0.0",
     "@material/drawer": "^4.0.0",
     "@material/elevation": "^4.0.0",
     "@material/fab": "^4.0.0",
@@ -45,7 +46,8 @@
     "@material/top-app-bar": "^4.0.0",
     "@material/typography": "^4.0.0",
     "material-design-icons": "^3.0.1",
-    "range-slider-vue": "^1.0.3"
+    "range-slider-vue": "^1.0.3",
+    "v-calendar": "^1.0.1"
   },
   "devDependencies": {
     "bootstrap": "^4.4.1",

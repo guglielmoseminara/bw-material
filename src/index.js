@@ -34,7 +34,8 @@ import BwMaterialTab from "./tabs/tab/tab.vue";
 import BwMaterialTabBar from "./tabs/tabBar/tabBar.vue";
 import BwMaterialTabIndicator from "./tabs/tabIndicator/tabIndicator.vue";
 import BwMaterialTabScroller from "./tabs/tabScroller/tabScroller.vue";
-
+import BwMaterialDatepicker from "./datepicker/datepicker.vue";
+import VCalendar from 'v-calendar';
 
 
 
@@ -58,6 +59,7 @@ if (process.env.NODE_ENV == 'development') {
 
 export default {
     install(Vue, options) {
+        Vue.use(VCalendar);
         Vue.component("bw-material-button", BwMaterialButton);      
         Vue.component("bw-material-chip", BwMaterialChip);
         Vue.component("bw-material-header", BwMaterialHeader);
@@ -93,6 +95,7 @@ export default {
         Vue.component("bw-material-tab-bar", BwMaterialTabBar);
         Vue.component("bw-material-tab-indicator", BwMaterialTabIndicator);
         Vue.component("bw-material-tab-scroller", BwMaterialTabScroller);
+        Vue.component("bw-material-datepicker", BwMaterialDatepicker);
 
 
 

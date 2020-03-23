@@ -1,0 +1,18 @@
+:root {
+    --picker-main-color: var(--mdc-theme-primary);
+    --picker-border-color: var(--mdc-theme-on-primary);
+
+}
+
+.bw-picker {
+    .vc-title-layout {
+        .vc-title {
+            @extend .mdc-typography--subtitle1;
+        }
+    }
+    div.vc-highlight {
+        background: var(--picker-main-color);
+        border-color: var(--picker-border-color);
+    }
+}
+

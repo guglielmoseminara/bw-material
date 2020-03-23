@@ -2,15 +2,33 @@
 
 <div class="row mt-5">
   <div class="col-12 mt-5">
-      <h3 class="mb-4">TEXT FIELD</h3>
+    <h3 class="mb-4">DATE FIELD</h3>
+    <bw-material-datepicker label="label date"
+        placeholder="placeh. date" 
+        v-model="date"
+    >
+    </bw-material-datepicker>
+    {{ date }}
+
+    <br><br>
+    <bw-material-datepicker 
+        :is-range="true"
+        label="label date"
+        placeholder="placeh. date" 
+        v-model="dateRange"
+    >
+    </bw-material-datepicker>
+    {{dateRange}}
+
+      <h3 class="my-4">TEXT FIELD</h3>
       <h6>FROM material docs</h6>
       <p>NOTE: Do not use outlined to style a full width text field.</p>
       <p>NOTE: Do not use floating-label within fullwidth. Labels should not be included as part of the DOM structure of a full width text field.</p>
     
       <h5 class="my-3">Filled:</h5>
-    <bw-material-text-field v-model="textFieldModel" id="my-text-field1" color="primary" placeholder="mah">
+    <bw-material-text-field v-model="textFieldModel" id="my-text-field33" color="primary" placeholder="mah">
         <bw-material-text-field-icon icon="favorite" slot="leadingIcon"></bw-material-text-field-icon>
-        <bw-material-floating-label for="my-text-field1">Hint text</bw-material-floating-label>
+        <bw-material-floating-label for="my-text-field33">Hint text</bw-material-floating-label>
         <bw-material-text-field-icon icon="favorite" slot="trailingIcon"></bw-material-text-field-icon>
         <bw-material-line-ripple slot="bottomLine"/>
     </bw-material-text-field>

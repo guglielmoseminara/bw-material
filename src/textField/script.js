@@ -124,7 +124,8 @@ export default {
   },
   methods: {
     updateSlot () {
-      this.noLabel = this.$el.querySelector('.mdc-floating-label') == null
+      // console.log(this.$el.querySelector('.mdc-floating-label') == null);
+      this.noLabel = !utils.isDefined(this.$el.querySelector('.mdc-floating-label'));
       this.hasLeadingIcon = this.$slots.leadingIcon != null
       this.hasTrailingIcon = this.$slots.trailingIcon != null
       // to make our icons compatible with version 0.x.y
