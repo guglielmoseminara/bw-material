@@ -102,7 +102,7 @@ export default {
                 return (
                     this.$slots[slotName] && 
                     this.$slots[slotName][0] && 
-                    (this.$slots[slotName][0].children || this.$slots[slotName][0].text)
+                    (this.$slots[slotName][0].children || this.$slots[slotName][0].text || this.$slots[slotName][0].tag)
                 );
             }
         }
