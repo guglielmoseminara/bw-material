@@ -1,0 +1,48 @@
+  
+@import "@material/tab-bar/mdc-tab-bar";
+@import "@material/tab-scroller/mdc-tab-scroller";
+@import "@material/tab-indicator/mdc-tab-indicator";
+@import "@material/tab/mdc-tab";
+
+
+:root {
+    // --tab-active-color: var(--mdc-theme-primary);
+    --tab-active-color: var(--mdc-theme-primary);
+    --tab-unselect-color: #808080;
+
+    --tab-active-color-secondary: var(--mdc-theme-secondary);
+    --tab-unselect-color-secondary: #808080;
+    
+    --tab-horizontal-padding: 10px;
+    --tab-undrline-height: 2px;
+}
+
+
+@mixin bw-tab-color($unselect-color, $active-color) {
+    .mdc-tab {
+        @include mdc-tab-text-label-color($unselect-color);
+        @include mdc-tab-horizontal-padding(var(--tab-horizontal-padding));
+        @include mdc-tab-active-text-label-color($active-color);
+        @include mdc-tab-active-icon-color($active-color);
+        
+        .mdc-tab__ripple::before, .mdc-tab__ripple::after {
+            background-color: $active-color!important;
+        }
+        .mdc-tab-indicator {
+            @include mdc-tab-indicator-underline-height(var(--tab-undrline-height));
+            @include mdc-tab-indicator-underline-color($active-color);
+        }
+    }
+}
+
+.color-primary {
+    $unselect-color: var(--tab-unselect-color);
+    $active-color: var(--tab-active-color);
+    @include bw-tab-color($unselect-color, $active-color);
+}
+
+.color-secondary {
+    $unselect-color: var(--tab-unselect-color-secondary);
+    $active-color: var(--tab-active-color-secondary);
+    @include bw-tab-color($unselect-color, $active-color);
+}

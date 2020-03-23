@@ -28,7 +28,14 @@ import BwMaterialMenuSurface from "./menuSurface/menuSurface.vue";
 import BwMaterialList from "./list/list.vue";
 import BwMaterialListItem from "./listItem/listItem.vue";
 import BwMaterialDropdownMenu from "./dropdownMenu/dropdownMenu.vue";
-import BwMaterialAbstractListItem from "./abstractListItem/abstractListItem.vue"
+import BwMaterialAbstractListItem from "./abstractListItem/abstractListItem.vue";
+
+import BwMaterialTab from "./tabs/tab/tab.vue";
+import BwMaterialTabBar from "./tabs/tabBar/tabBar.vue";
+import BwMaterialTabIndicator from "./tabs/tabIndicator/tabIndicator.vue";
+import BwMaterialTabScroller from "./tabs/tabScroller/tabScroller.vue";
+
+
 
 
 import Vue from 'vue';
@@ -82,6 +89,12 @@ export default {
         Vue.component("bw-material-list-item", BwMaterialListItem);
         Vue.component("bw-material-dropdown-menu", BwMaterialDropdownMenu);
         Vue.component("bw-material-abstract-list-item", BwMaterialAbstractListItem);
+        Vue.component("bw-material-tab", BwMaterialTab);
+        Vue.component("bw-material-tab-bar", BwMaterialTabBar);
+        Vue.component("bw-material-tab-indicator", BwMaterialTabIndicator);
+        Vue.component("bw-material-tab-scroller", BwMaterialTabScroller);
+
+
 
         Vue.mixin({
         methods: {

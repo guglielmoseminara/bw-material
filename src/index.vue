@@ -5,13 +5,23 @@
                     :fixed="true" :scroll-target="$refs.mainContent" 
                     :nav-links-groups="[
                     [
+                        {name: 'button doc', href: 'button'},
                         {name: 'button doc', href: 'button',
-                        
+                        children: [
+                            {
+                            name: 'lamel 3.1',
+                            children: [
+
+                                {name: 'menu doc', href: 'menu'},
+                                {name: 'list doc', href: 'list'},
+                                {name: 'card doc', icon: 'featured_video', href: 'card'}, 
+                                {name: 'chips doc', href: 'chips'}
+                            ]
+                            },
+                            {name: 'lamel 4', href: 'button'  }
+                        ]
                         },
-                        {name: 'menu doc', href: 'menu'},
-                        {name: 'list doc', href: 'list'},
-                        {name: 'card doc', icon: 'featured_video', href: 'card'}, 
-                        {name: 'chips doc', href: 'chips'}
+
                     ],
                     [
                         {name: 'text field', icon: 'featured_video', href: 'text'}, 

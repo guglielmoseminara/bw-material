@@ -9,7 +9,7 @@ import Text from '../views/demo/text/component.vue';
 import Headers from '../views/demo/headers/component.vue';
 import Menu from '../views/demo/menu/component.vue';
 import List from '../views/demo/list/component.vue';
-
+import Tab from '../views/demo/tab/component.vue';
 
 
 Vue.use(VueRouter)
@@ -59,6 +59,11 @@ const routes = [
     path: '/list',
     name: 'list',
     component: List
+  },
+  {
+    path: '/tab',
+    name: 'tab',
+    component: Tab
   }
 ]
 
