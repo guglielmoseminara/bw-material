@@ -4,7 +4,9 @@
   <div class="col-12 mt-5">
     <h3 class="mb-4">DATE FIELD</h3>
     <bw-material-datepicker label="label date"
-        placeholder="placeh. date" 
+        placeholder="placeh. date"
+        outlined
+        color="secondary"
         v-model="date"
     >
     </bw-material-datepicker>
@@ -14,6 +16,8 @@
     <bw-material-datepicker 
         :is-range="true"
         label="label date"
+        color="primary"
+        :icon="{ name:'event', position: 'r'}"
         placeholder="placeh. date" 
         v-model="dateRange"
     >

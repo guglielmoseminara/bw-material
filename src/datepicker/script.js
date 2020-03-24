@@ -1,3 +1,5 @@
+import utils from "../utils/utils";
+
 export default {
   model: {
     prop: 'value',
@@ -19,6 +21,18 @@ export default {
     placeholder: {
       type: String,
       default: 'Date'
+    },
+    color: {
+      type: String,
+      default: 'primary'
+    },
+    outlined: {
+      type: Boolean,
+      default: false
+    },
+    icon: {
+      type: Object,
+      default: undefined
     }
   },
   data() {
@@ -34,5 +48,12 @@ export default {
     }
   },
   computed: {
+    classes() {
+      let classes = {};
+      if(utils.isDefined(this.color)) {
+        classes['color-'+this.color] = true;
+      } 
+      return classes;
+    }
   },
 }

@@ -1,7 +1,8 @@
 :root {
     --picker-main-color: var(--mdc-theme-primary);
     --picker-border-color: var(--mdc-theme-on-primary);
-
+    --picker-main-color-secondary: var(--mdc-theme-secondary);
+    --picker-border-color-secondary: var(--mdc-theme-on-secondary);
 }
 
 .bw-picker {
@@ -10,9 +11,23 @@
             @extend .mdc-typography--subtitle1;
         }
     }
-    div.vc-highlight {
-        background: var(--picker-main-color);
-        border-color: var(--picker-border-color);
+    &.color-primary {
+        div.vc-highlight {
+            background: var(--picker-main-color);
+            border-color: var(--picker-border-color);
+        }
+        .vc-highlights + span {
+            color: var(--picker-border-color);
+        }
+    }
+    &.color-secondary {
+        div.vc-highlight {
+            background: var(--picker-main-color-secondary);
+            border-color: var(--picker-border-color-secondary);
+        }
+        .vc-highlights + span {
+            color: var(--picker-border-color-secondary);
+        }
     }
 }
 
