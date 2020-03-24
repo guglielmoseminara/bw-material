@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="mdc-switch" ref="mdcSwitch" 
-        :class="[value ? ('mdc-switch--checked '+ classes) : classes]"
+        :class="[value ? ('mdc-switch--checked ') : '', classes]"
     >
         <div class="mdc-switch__track"></div>
         <div class="mdc-switch__thumb-underlay">
