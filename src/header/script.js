@@ -64,7 +64,7 @@ export default {
   },
   data() {
     return {
-     
+      selectedIndex: undefined
     }
   },
   mounted() {
@@ -79,6 +79,11 @@ export default {
     },
     closeDrawer() {
       this.$refs.drawer.mdcDrawer.open = false;
+    },
+    changeListItem(ev, index) {
+      if(ev) {
+        this.selectedIndex = index;
+      }
     }
   },
 }

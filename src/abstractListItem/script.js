@@ -14,5 +14,10 @@ export default {
      
     }
   },
+  methods: {
+    emitChange(ev) {
+      this.$emit('change', ev);
+    }
+  },
   
 }

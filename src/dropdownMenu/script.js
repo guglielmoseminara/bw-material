@@ -22,5 +22,8 @@ export default {
       this.isMenuOpen = true;
 
     },
+    emitChange(ev) {
+      this.$emit('change', ev);
+    }
   }
 }

@@ -20,6 +20,7 @@
         color: inherit;
         &:hover {
             text-decoration: none;
+            color: var(--nav-link-hover-color);
         }
     }
 }
@@ -33,6 +34,9 @@
 
     &.have-children {
         overflow: visible;
+    }
+    &.opened {
+        z-index: 5;
     }
 }
 

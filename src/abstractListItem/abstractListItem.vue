@@ -1,9 +1,17 @@
 <template>
+
   <span class="bw-list-item-label" v-if="!item.children">
-    {{ item.name }}
+    <router-link v-if="item.href" :to="item.href">
+      {{ item.name }}
+    </router-link>
+    <template v-else>
+      {{ item.name }}
+    </template>
   </span>
 
-  <bw-material-dropdown-menu v-else-if="internalListType === 'dropdown'"
+  <bw-material-dropdown-menu 
+    @change="emitChange($event)"
+    v-else-if="internalListType === 'dropdown'"
     :label="item.name" 
     :list-items="item.children"
   >

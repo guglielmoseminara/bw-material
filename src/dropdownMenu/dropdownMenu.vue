@@ -8,7 +8,9 @@
     </p>
 
     <!-- use only with list -->
-    <bw-material-menu v-model="isMenuOpen">
+    <bw-material-menu v-model="isMenuOpen"
+      @change="emitChange($event)"
+    >
       <bw-material-list v-if="listItems">
         <template v-for="(item, i) in listItems">
           <!-- don't change with list item component for ripple and overflow -->
