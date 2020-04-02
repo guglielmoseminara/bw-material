@@ -13,7 +13,7 @@
     <div class="mdc-top-app-bar__row" :class="{'container': haveContainer}">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
             <button v-if="startMenu" @click="openDrawer"
-                class="mdc-icon-button material-icons mdc-top-app-bar__navigation-icon--unbounded"
+                class="mdc-icon-button material-icons mdc-top-app-bar__navigation-icon--unbounded menu"
             >menu</button>
             <slot name="startSlot" />
         </section>
@@ -41,7 +41,7 @@
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
             <slot name="endSlot" />
             <button v-if="!startMenu" @click="openDrawer"
-                class="mdc-icon-button material-icons mdc-top-app-bar__navigation-icon--unbounded"
+                class="mdc-icon-button material-icons mdc-top-app-bar__navigation-icon--unbounded menu"
             >menu</button>
         </section>
     </div>
