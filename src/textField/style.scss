@@ -89,28 +89,27 @@
 
 
 // ADD CONTAIN TEXTAREA. OVERRIDE MATERIAL CLASS
-.mdc-text-field--textarea:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined) .mdc-text-field__input {
-    border-bottom: 1px solid;
-    &.color-primary {
-        border-bottom-color: var(--label-color-primary);
-    }
-    &.color-secondary {
-        border-bottom-color: var(--label-color-secondary);
-    }
-}
 
 .mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined) {
     background: whitesmoke;
 }
 
-.mdc-text-field--textarea:not(.mdc-text-field--outlined) .mdc-floating-label--float-above {
-    transform: translateY(-106%) scale(0.75);
-}
+.mdc-text-field--textarea:not(.mdc-text-field--outlined) {
+    .mdc-floating-label {
+        left: 16px;
+    }
+    .mdc-floating-label--float-above {
+        transform: translateY(-106%) scale(0.75);
+        font-size: 1rem;
+    }
 
-.mdc-text-field--textarea:not(.mdc-text-field--outlined) .mdc-floating-label {
-    left: 16px;
-}
-
-.mdc-text-field--textarea:not(.mdc-text-field--outlined) .mdc-floating-label--float-above {
-    font-size: 1rem;
+    &:not(.mdc-text-field--disabled) .mdc-text-field__input {
+        border-bottom: 1px solid;
+        &.color-primary {
+            border-bottom-color: var(--label-color-primary);
+        }
+        &.color-secondary {
+            border-bottom-color: var(--label-color-secondary);
+        }
+    }
 }
