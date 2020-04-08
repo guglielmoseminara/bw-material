@@ -115,6 +115,12 @@
     <bw-material-text-field v-model="textFieldModel" id="my-text-field4" textarea maxlength="200">
         <bw-material-floating-label for="my-text-field4">Hint text</bw-material-floating-label>
         <bw-material-text-field-char-counter></bw-material-text-field-char-counter>
+        <bw-material-line-ripple slot="bottomLine"/>
+    </bw-material-text-field>
+    <br>
+    <bw-material-text-field v-model="textFieldModel" id="my-text-field4" textarea outlined maxlength="200">
+        <bw-material-floating-label for="my-text-field4">Hint text</bw-material-floating-label>
+        <bw-material-text-field-char-counter></bw-material-text-field-char-counter>
     </bw-material-text-field>
     <br><br>
 

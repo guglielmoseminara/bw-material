@@ -27,7 +27,7 @@
       v-on="$listeners"
     />
     <div
-      v-if="textarea || outlined"
+      v-if="outlined"
       class="mdc-notched-outline"
     >
       <div class="mdc-notched-outline__leading" />
@@ -39,7 +39,7 @@
       </div>
       <div class="mdc-notched-outline__trailing" />
     </div>
-    <slot v-if="isNotEmptySlot('default') && !textarea && !outlined" />
+    <slot v-if="isNotEmptySlot('default') && !outlined" />
     <slot name="trailingIcon" />
     <slot
       v-if="!outlined"
