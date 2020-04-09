@@ -97,6 +97,7 @@
 .mdc-text-field--textarea:not(.mdc-text-field--outlined) {
     .mdc-floating-label {
         left: 16px;
+        top: 24px;
     }
     .mdc-floating-label--float-above {
         transform: translateY(-106%) scale(0.75);
@@ -105,6 +106,8 @@
 
     &:not(.mdc-text-field--disabled) .mdc-text-field__input {
         border-bottom: 1px solid;
+        margin: 0;
+        padding: 20px 16px 6px;
         &.color-primary {
             border-bottom-color: var(--label-color-primary);
         }
