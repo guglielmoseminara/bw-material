@@ -41,7 +41,18 @@ export default {
     navLinksGroups: {
       type: Array, 
       required: false,
-    }
+    },
+
+    // USED FOR BLADE SLOT IN LARAVEL
+    clickEventName: {
+      type: String,
+      required: false
+    },
+
+    clickEventParams: {
+        type: [Array, Object, String, Number],
+        required: false
+    },
   },
   computed: {
     classes () {
