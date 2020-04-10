@@ -1,6 +1,5 @@
 @import "@material/top-app-bar/mdc-top-app-bar";
 
-
 :root {
     --header-text-color: var(--mdc-theme-primary);
     --header-bg-color: var(--mdc-theme-on-primary);
@@ -40,3 +39,9 @@
     }
 }
 
+.bw-top-app-bar--fixed {
+    position: sticky;
+    z-index: 8;
+    top: 0!important;
+    width: 100%;
+}

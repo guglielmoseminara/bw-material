@@ -51,7 +51,7 @@ export default {
         'mdc-top-app-bar--dense-prominent': this.dense && this.prominent,
         'mdc-top-app-bar--short': this.short && !this.collapsed,
         'mdc-top-app-bar--short-collapsed': this.collapsed && this.short,
-        'mdc-top-app-bar--fixed': this.fixed && !this.short
+        'bw-top-app-bar--fixed': this.fixed && !this.short
       }
     }
   },

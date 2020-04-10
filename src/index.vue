@@ -1,6 +1,6 @@
 <template>
         <div class="app2">
-            <div class="appheader">
+ 
                 <bw-material-header raised v-elevation="1" 
                     :fixed="true" :scroll-target="$refs.mainContent" 
                     :nav-links-groups="[
@@ -44,9 +44,9 @@
                         <button class="mdc-icon-button material-icons mdc-top-app-bar__action-item--unbounded" aria-label="Bookmark this page">bookmark</button>  
                     </template>
                 </bw-material-header>
-            </div>
+      
 
-            <div ref="mainContent">
+            <div ref="mainContent" class="container">
                 <router-view />
             </div>
             
