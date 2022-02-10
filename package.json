@@ -56,7 +56,7 @@
     "@vue/cli-plugin-router": "^4.2.2",
     "@vue/cli-service-global": "^4.2.2",
     "bili": "^4.8.1",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "rollup-plugin-vue": "^5.1.6",
     "sass": "^1.25.0",
     "sass-loader": "^8.0.2",
